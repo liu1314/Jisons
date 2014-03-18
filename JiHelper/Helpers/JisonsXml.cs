@@ -27,9 +27,7 @@ using System.IO;
 
 namespace Jisons
 {
-    /// <summary>
-    /// 只支持class类型
-    /// 因为此项在struct返回默认的之后无法判断是否成功
+    /// <summary> 只支持class类型 因为此项在struct返回默认的之后无法判断是否成功
     /// </summary>
     public static class JisonsXmlOfClass
     {
@@ -80,10 +78,7 @@ namespace Jisons
         }
     }
 
-    /// <summary>
-    /// struct类型进行读取时，不确保一定成功
-    /// 如果读取不成功会返回default(S)
-    /// </summary>
+    /// <summary> struct类型进行读取时，不确保一定成功 如果读取不成功会返回default(S) </summary>
     public static class JisonsXmlOfStruct
     {
 
