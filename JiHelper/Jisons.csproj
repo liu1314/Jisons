@@ -65,6 +65,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Helpers\JisonsCursor.cs" />
+    <Compile Include="JisonsSwitch.cs" />
     <Compile Include="WPF\Converters\DoubleSpanConverter.cs" />
     <Compile Include="WPF\Controls\ReNameTextBox.cs" />
     <Compile Include="WPF\Controls\TopmostWindow.cs" />
