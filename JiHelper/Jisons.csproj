@@ -65,7 +65,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Helpers\JisonsCursor.cs" />
-    <Compile Include="JisonsSwitch.cs" />
+    <Compile Include="Helpers\JisonsHttp.cs" />
+    <Compile Include="Helpers\JisonsSwitch.cs" />
     <Compile Include="WPF\Converters\DoubleSpanConverter.cs" />
     <Compile Include="WPF\Controls\ReNameTextBox.cs" />
     <Compile Include="WPF\Controls\TopmostWindow.cs" />
@@ -102,6 +103,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

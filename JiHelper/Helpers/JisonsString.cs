@@ -22,11 +22,25 @@
 
 using System;
 using System.Linq;
+using System.Text;
 
 namespace Jisons
 {
     public static class JisonsString
     {
+        #region 字符编码转换
+
+        /// <summary>
+        /// string转换到byte[]
+        /// </summary>
+        /// <param name="body"></param>
+        /// <returns></returns>
+        public static byte[] ConvertToASCII(this string body)
+        {
+            return new ASCIIEncoding().GetBytes(body);
+        }
+
+        #endregion
 
         /// <summary> 替换最后一个匹配字符串 </summary>
         /// <param name="str">原字符串</param>
@@ -52,7 +66,7 @@ namespace Jisons
         //全角转半角
         //string str = "ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ～！＠＃＄％︿＆＊（）＿－＋｜＼｛｝［］：＂；＇＜＞，．？／０１２３４５６７８９";
         //string str2 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ~!@#$%^&*()_-+|\\{}[]:\";'<>,.?/0123456789";
-           
+
 
     }
 }

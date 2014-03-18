@@ -35,7 +35,7 @@ namespace Jisons
         /// <summary> 转换Icon到ImageSource </summary>
         /// <param name="icon">传入的Icon</param>
         /// <returns>ImageSource</returns>
-        public static ImageSource ConverterToImageSource(this Icon icon)
+        public static ImageSource ConvertToImageSource(this Icon icon)
         {
             return icon != null ? Imaging.CreateBitmapSourceFromHIcon(icon.Handle, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions()) : null;
         }
