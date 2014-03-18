@@ -13,13 +13,12 @@
  *             对于JisonsImageSource的处理
  * 
  *========================================
- * 
+ * Hi,小喵喵...
  * Copyright © 迹I柳燕
  * 
  * 转载请保留...
  * 
  */
-
 
 using System.Drawing;
 using System.Windows;

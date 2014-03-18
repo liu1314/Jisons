@@ -1,10 +1,17 @@
-    Jisons
+﻿    Jisons
     ======
 
     The helpers of Ji ,and I think it is all liske my sons ...
 
-    Add many method of helpers, such like
-        Brush Visual Icon Ienumerable ImageSource Xml ...
+    Add many method of helpers, 
+    
+    Such like
+      
+      Helper 
+            Brush Visual Icon Ienumerable ImageSource Xml ...
+      Control
+            RenameTextBox TopMostWindow ...
+
     Use this can save time to do another thing what you like ...
 
     I will add the project forever ...

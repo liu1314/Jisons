@@ -13,13 +13,12 @@
  *             处理需要置顶显示的窗口
  * 
  *========================================
- * 
+ * Hi,小喵喵...
  * Copyright © 迹I柳燕
  * 
  * 转载请保留...
  * 
  */
-
 using System;
 using System.Windows;
 using System.Windows.Input;
