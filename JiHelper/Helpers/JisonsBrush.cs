@@ -1,4 +1,4 @@
-﻿/* 
+﻿/* 迹I柳燕
  * 
  * FileName:   JisonsBrush.cs
  * Version:    1.0
@@ -16,7 +16,10 @@
  * 
  * Copyright © 迹I柳燕
  * 
+ * 转载请保留...
+ * 
  */
+
 
 using System.Windows.Media;
 

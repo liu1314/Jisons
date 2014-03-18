@@ -1,4 +1,4 @@
-﻿/* 
+﻿/* 迹I柳燕
  * 
  * FileName:   JisonsIEnumerable.cs
  * Version:    1.0
@@ -16,6 +16,8 @@
  * 
  * Copyright © 迹I柳燕
  * 
+ * 转载请保留...
+ * 
  */
 
 using System;
@@ -28,9 +30,7 @@ namespace Jisons
     public static class JisonsIEnumerable
     {
 
-        /// <summary>
-        /// 具有锁定检查的遍历执行函数体
-        /// </summary>
+        /// <summary> 具有锁定检查的遍历执行函数体 </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="items">欲执行循环的列表,继承IEnumerable</param>
         /// <param name="action">执行循环的函数体</param>
@@ -41,5 +41,6 @@ namespace Jisons
                 action.Invoke(item);
             }
         }
+
     }
 }

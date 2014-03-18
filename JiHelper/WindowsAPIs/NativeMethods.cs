@@ -1,4 +1,35 @@
-﻿using System;
+﻿/* 迹I柳燕
+ * 
+ * FileName:   NativeMethods.cs
+ * Version:    1.0
+ * Date:       2014.03.18
+ * Author:     Ji
+ * 
+ *========================================
+ * @namespace  Jisons 
+ * @class      ProcessAccessFlags 
+ *             TernaryRasterOperations 
+ *             ModuleFilterFlags
+ *             AllocationType
+ *             MemoryProtection
+ *             HookType
+ *             WINDOWINFO
+ *             RECT
+ *             And so on ...
+ *             
+ * @extends    
+ * 
+ *             对于Window API 的声明
+ * 
+ *========================================
+ * 
+ * Copyright © 迹I柳燕
+ * 
+ * 转载请保留...
+ * 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -43,7 +74,6 @@ namespace Jisons
             BLACKNESS = 0x00000042,
             WHITENESS = 0x00FF0062
         }
-
 
         public enum ModuleFilterFlags : int
         {
