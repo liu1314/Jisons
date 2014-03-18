@@ -1,4 +1,27 @@
-﻿using System;
+﻿/* 迹I柳燕
+ * 
+ * FileName:   DoubleSpanConverter.cs
+ * Version:    1.0
+ * Date:       2014.03.18
+ * Author:     Ji
+ * 
+ *========================================
+ * @namespace  Jisons 
+ * @class      DoubleSpanConverter
+ * @extends    IValueConverter
+ *             
+ *             WPF 扩展
+ *             执行对于 ConverterParmeter 的 double 求和
+ * 
+ *========================================
+ * Hi,小喵喵...
+ * Copyright © 迹I柳燕
+ * 
+ * 转载请保留...
+ * 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
