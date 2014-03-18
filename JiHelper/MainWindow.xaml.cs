@@ -24,9 +24,12 @@ namespace Jisons
         {
             InitializeComponent();
 
-            int a = 1;
+            int a = (new Random()).Next(0, 2);
+            int b5 = (new Random()).Next(1, 3);
             string b = "1";
 
+            dynamic xiaolong = new { Eat = (Func<bool>)(() => (new Random()).Next(0, 2) != 0) }, fanli = new { Eat = (Func<bool>)(() => (new Random()).Next(1, 3) != 1) }, count = 0;
+            var wenzhi = xiaolong.Eat() || fanli.Eat() ? ((Func<bool>)(() => count.Equals(count++))).Invoke() : ((Func<bool>)(() => (count++.Equals(count--)))).Invoke();
         }
     }
 }
