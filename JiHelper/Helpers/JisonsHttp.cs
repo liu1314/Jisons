@@ -47,7 +47,7 @@ namespace Jisons
         /// <param name="url">请求的URL</param>
         /// <param name="method">请求使用的方法 GET、POST</param>
         /// <returns>返回创建的HttpWebRequest</returns>
-        private static HttpWebRequest CreatRequest(string url, string method)
+        private static HttpWebRequest CreatRequest(this string url, string method)
         {
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
 
@@ -70,7 +70,7 @@ namespace Jisons
         /// <summary> 根据URL获取回传的 Stream 无编码格式的确认 </summary>
         /// <param name="url">请求的URL</param>
         /// <returns>返回的数据流</returns>
-        public static Stream GetResponseOfStream(string url)
+        public static Stream GetResponseOfStream(this string url)
         {
             try
             {
@@ -103,7 +103,7 @@ namespace Jisons
         /// <param name="method">传递方法</param>
         /// <param name="data">传递数据</param>
         /// <returns>返回的字符串 UTF-8编码</returns>
-        public static string GetResponseOfString(string url, string method, string data = "")
+        public static string GetResponseOfString(this string url, string method, string data = "")
         {
             try
             {

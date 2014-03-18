@@ -31,7 +31,7 @@ namespace Jisons
         /// <summary> 十六进制颜色值转换为Brush </summary>
         /// <param name="brushStr">传入的颜色字符串</param>
         /// <returns>Brush</returns>
-        public static Brush StringConvertToBrush(string brushStr)
+        public static Brush StringConvertToBrush(this string brushStr)
         {
             return new SolidColorBrush((Color)ColorConverter.ConvertFromString(brushStr));
         }

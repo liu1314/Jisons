@@ -47,7 +47,7 @@ namespace Jisons
         /// <typeparam name="C">读取的数据类型</typeparam>
         /// /// <param name="FullPath">包含数据的文件路径</param>
         /// <returns>C ， 返回为null的时候读取失败</returns>
-        public static C ReadFromXml<C>(string FullPath) where C : class
+        public static C ReadFromXml<C>(this string FullPath) where C : class
         {
             return JisonsXml.Read(FullPath, typeof(C)) as C;
         }
@@ -100,7 +100,7 @@ namespace Jisons
         /// <typeparam name="S">读取的数据类型</typeparam>
         /// <param name="fileInfo">包含数据的文件 FileInfo 信息</param>
         /// <returns>返回为默认值的时候读取失败</returns>
-        public static S ReadFromXml<S>(string FullPath) where S : struct
+        public static S ReadFromXml<S>(this string FullPath) where S : struct
         {
             var data = JisonsXml.Read(FullPath, typeof(S));
             return data != null ? (S)data : default(S);

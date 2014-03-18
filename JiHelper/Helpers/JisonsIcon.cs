@@ -35,7 +35,7 @@ namespace Jisons
         /// <summary> 通过进程的句柄获取此句柄的Icon </summary>
         /// <param name="handle">进程的句柄</param>
         /// <returns>ImageSource</returns>
-        public static ImageSource GetIconOfImageSource(IntPtr handle)
+        public static ImageSource GetIconOfImageSource(this IntPtr handle)
         {
             var iconData = GetIconOfBytes(handle);
             if (iconData != null)
@@ -57,7 +57,7 @@ namespace Jisons
         /// <summary> 通过进程的句柄获取此句柄的Icon </summary>
         /// <param name="handle">进程的句柄</param>
         /// <returns>byte[]</returns>
-        public static byte[] GetIconOfBytes(IntPtr handle)
+        public static byte[] GetIconOfBytes(this IntPtr handle)
         {
             if (handle != IntPtr.Zero)
             {

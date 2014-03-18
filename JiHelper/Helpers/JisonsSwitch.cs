@@ -42,7 +42,7 @@ namespace Jisons
         /// <param name="judge"></param>
         /// <param name="jition"></param>
         /// <returns></returns>
-        public static bool DoAction<T>(this T judge, params SwitchItem<T>[] jition)
+        public static bool DoSwitchAction<T>(this T judge, params SwitchItem<T>[] jition)
         {
             bool isdo = false;
             if (jition != null)

@@ -35,9 +35,9 @@ namespace Jisons
         /// </summary>
         /// <param name="body"></param>
         /// <returns></returns>
-        public static byte[] ConvertToASCII(this string body)
+        public static byte[] ConvertToASCII(this string str)
         {
-            return new ASCIIEncoding().GetBytes(body);
+            return new ASCIIEncoding().GetBytes(str);
         }
 
         #endregion
