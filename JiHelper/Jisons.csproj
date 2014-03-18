@@ -68,6 +68,7 @@
     <Compile Include="Helpers\JisonsHttp.cs" />
     <Compile Include="Helpers\JisonsSwitch.cs" />
     <Compile Include="Helpers\JisonsHtml.cs" />
+    <Compile Include="Helpers\JisonsBitmap.cs" />
     <Compile Include="WPF\Converters\DoubleSpanConverter.cs" />
     <Compile Include="WPF\Controls\ReNameTextBox.cs" />
     <Compile Include="WPF\Controls\TopmostWindow.cs" />
