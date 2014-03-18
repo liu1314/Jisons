@@ -62,18 +62,19 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controls\ReNameTextBox.cs" />
-    <Compile Include="Controls\TopmostWindow.cs" />
+    <Compile Include="DoubleSpanConverter.cs" />
+    <Compile Include="WPF\Controls\ReNameTextBox.cs" />
+    <Compile Include="WPF\Controls\TopmostWindow.cs" />
     <Compile Include="Helpers\JisonsIcon.cs" />
     <Compile Include="Helpers\JisonsXml.cs" />
-    <Compile Include="Helpers\WPF\JisonsBrush.cs" />
-    <Compile Include="Helpers\WPF\JisonsImageSource.cs" />
-    <Compile Include="Helpers\WPF\JisonsFindVisual.cs" />
+    <Compile Include="WPF\Helpers\JisonsBrush.cs" />
+    <Compile Include="WPF\Helpers\JisonsImageSource.cs" />
+    <Compile Include="WPF\Helpers\JisonsFindVisual.cs" />
     <Compile Include="Helpers\JisonsIEnumerable.cs" />
     <Compile Include="Helpers\JisonsIList.cs" />
     <Compile Include="Helpers\JisonsString.cs" />
-    <Compile Include="Helpers\WPF\JisonsINotifyOfInvocationList.cs" />
-    <Compile Include="Helpers\WPF\JisonsUIElement.cs" />
+    <Compile Include="WPF\Helpers\JisonsINotifyOfInvocationList.cs" />
+    <Compile Include="WPF\Helpers\JisonsUIElement.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -104,7 +105,9 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="WPF\Converters\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
