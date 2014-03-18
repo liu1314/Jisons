@@ -9,7 +9,8 @@
  * @namespace  Jisons 
  * @class      JisonsImageSource
  * @extends    
- * 
+ *             
+ *             WPF 扩展
  *             对于JisonsImageSource的处理
  * 
  *========================================

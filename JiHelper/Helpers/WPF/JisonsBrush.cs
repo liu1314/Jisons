@@ -9,8 +9,9 @@
  * @namespace  Jisons 
  * @class      JisonsBrush
  * @extends    
- * 
- *             对于Brush的处理
+ *             
+ *             WPF 扩展
+ *             对于Brush的扩展方法
  * 
  *========================================
  * Hi,小喵喵...

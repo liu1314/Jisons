@@ -9,7 +9,8 @@
  * @namespace  Jisons 
  * @class      JisonsFindVisual
  * @extends    
- * 
+ *             
+ *             WPF 扩展
  *             对于Visual 元素的查询方法扩展
  * 
  *========================================
