@@ -8,10 +8,10 @@
  *========================================
  * @namespace  Jisons 
  * @class      JisonsNotificationObject
- * @extends    INotifyPropertyChanged
+ * @extends    
  * 
- *             对于 INotifyPropertyChanged 的补充，在此可以省略与每次自己写通知函数
- *             不过在不能继承此类的时候还是需要自己写
+ *             对于实现了 INotifyPropertyChanged 接口的类，可以直接扩展通知当前的线程通知
+ *             
  * 
  *========================================
  * Hi,小喵喵...
@@ -23,16 +23,20 @@
 
 using System;
 using System.ComponentModel;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows;
 
 namespace Jisons
 {
     public static class JisonsNotificationObject
     {
+
+        /// <summary> 增加对与 实现 INotifyPropertyChanged 接口的扩展线程通知 </summary>
+        /// <typeparam name="D">当前被绑定的类型</typeparam>
+        /// <typeparam name="T">当前发送线程通知的类型</typeparam>
+        /// <param name="data">当前被绑定的数据</param>
+        /// <param name="propertyExpression">反射获取类型名称的委托</param>
         public static void RaisePropertyChanged<D, T>(this D data, Expression<Func<T>> propertyExpression) where D : INotifyPropertyChanged
         {
             if (data != null)
@@ -65,12 +69,10 @@ namespace Jisons
             }
         }
 
-        /// <summary>
-        /// 获取当前的 
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="propertyExpression"></param>
-        /// <returns></returns>
+        /// <summary> 获取当前的委托名称 </summary>
+        /// <typeparam name="T">当前发送线程通知的类型</typeparam>
+        /// <param name="propertyExpression">反射获取类型名称的委托</param>
+        /// <returns> 当前的委托名称 </returns>
         public static string ExtractPropertyName<T>(Expression<Func<T>> propertyExpression)
         {
             if (propertyExpression != null)
