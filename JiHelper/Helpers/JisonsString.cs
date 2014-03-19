@@ -28,6 +28,7 @@ namespace Jisons
 {
     public static class JisonsString
     {
+
         #region 字符编码转换
 
         /// <summary>
@@ -66,7 +67,6 @@ namespace Jisons
         //全角转半角
         //string str = "ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ～！＠＃＄％︿＆＊（）＿－＋｜＼｛｝［］：＂；＇＜＞，．？／０１２３４５６７８９";
         //string str2 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ~!@#$%^&*()_-+|\\{}[]:\";'<>,.?/0123456789";
-
 
     }
 }

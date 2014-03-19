@@ -27,8 +27,7 @@ using System.IO;
 
 namespace Jisons
 {
-    /// <summary> 只支持class类型 因为此项在struct返回默认的之后无法判断是否成功
-    /// </summary>
+    /// <summary> 只支持class类型 因为此项在struct返回默认的之后无法判断是否成功 </summary>
     public static class JisonsXmlOfClass
     {
 
@@ -131,6 +130,7 @@ namespace Jisons
 
     }
 
+    /// <summary> 封装对与Xml读写操作的类 </summary>
     internal static class JisonsXml
     {
 

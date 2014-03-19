@@ -32,6 +32,7 @@ namespace Jisons
 {
     public static class JisonsIcon
     {
+
         /// <summary> 通过进程的句柄获取此句柄的Icon </summary>
         /// <param name="handle">进程的句柄</param>
         /// <returns>ImageSource</returns>

@@ -33,11 +33,10 @@ namespace Jisons
     public static class JisonsNotificationObject
     {
 
-        /// <summary>
-        /// 实现了 INotifyPropertyChanged 接口的类
-        /// </summary>
+        /// <summary> 实现了 INotifyPropertyChanged 接口的类 </summary>
         public abstract class JisonsINotifyPropertyChanged : INotifyPropertyChanged
         {
+            /// <summary> 在更改属性值时触发此事件 </summary>
             public event PropertyChangedEventHandler PropertyChanged;
 
             /// <summary> 当前类型的单项线程通知函数 </summary>
@@ -113,6 +112,6 @@ namespace Jisons
             }
             return null;
         }
-    }
 
+    }
 }

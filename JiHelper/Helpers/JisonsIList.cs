@@ -27,7 +27,9 @@ namespace Jisons
 {
     public static class JisonsIList
     {
-        /// <summary> 执行删除所有子项，且忽略锁定检查 </summary>
+
+        /// <summary> 执行删除所有子项，且忽略锁定检查 
+        /// 此项看源代码后发现比直接使用 Clear 会效率影响很多，建议在有此特殊需求时再使用 </summary>
         /// <typeparam name="T">遍历的子类型</typeparam>
         /// <param name="items">欲清空的列表,继承IList</param>
         public static void DeleteAllItems<T>(this IList<T> items)
