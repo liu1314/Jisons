@@ -8,6 +8,7 @@
  *========================================
  * @namespace  Jisons 
  * @class      JisonsNotificationObject
+ *             JisonsINotifyPropertyChanged
  * @extends    
  * 
  *             对于实现了 INotifyPropertyChanged 接口的类，可以直接扩展通知当前的线程通知
@@ -31,6 +32,34 @@ namespace Jisons
 {
     public static class JisonsNotificationObject
     {
+
+        /// <summary>
+        /// 实现了 INotifyPropertyChanged 接口的类
+        /// </summary>
+        public abstract class JisonsINotifyPropertyChanged : INotifyPropertyChanged
+        {
+            public event PropertyChangedEventHandler PropertyChanged;
+
+            /// <summary> 当前类型的单项线程通知函数 </summary>
+            /// <param name="propertyName"> 进行线程通知的属性名称 </param>
+            protected virtual void RaisePropertyChanged(string propertyName)
+            {
+                if (this.PropertyChanged != null)
+                {
+                    this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+                }
+            }
+
+            /// <summary> 当前类型的多项线程通知函数 </summary>
+            /// <param name="propertyNames"> 进行线程通知的属性名称集合 </param>
+            protected void RaisePropertyChanged(params string[] propertyNames)
+            {
+                if (propertyNames == null)
+                {
+                    propertyNames.ForEach(propertyName => this.RaisePropertyChanged(propertyName));
+                }
+            }
+        }
 
         /// <summary> 增加对与 实现 INotifyPropertyChanged 接口的扩展线程通知 </summary>
         /// <typeparam name="D">当前被绑定的类型</typeparam>
