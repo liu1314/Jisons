@@ -28,15 +28,21 @@ using System.Windows.Media;
 
 namespace Jisons
 {
-    internal class ReNameTextBox : TextBox
+    public interface ReNameOfUIElement : IInputElement
     {
-        //public ListBoxItemUC ParentUC
+        string ChangedName { get; set; }
+        bool IsEditor { get; set; }
+    }
+
+    public class ReNameTextBox : TextBox
+    {
+        //public UIElement ParentUIElement
         //{
-        //    get { return (ListBoxItemUC)GetValue(ParentUCProperty); }
+        //    get { return (UIElement)GetValue(ParentUCProperty); }
         //    set { SetValue(ParentUCProperty, value); }
         //}
         //public static readonly DependencyProperty ParentUCProperty =
-        //    DependencyProperty.Register("ParentUC", typeof(ListBoxItemUC), typeof(TextBoxReNameUC), new PropertyMetadata(null, ParentUCChanged));
+        //    DependencyProperty.Register("ParentUC", typeof(UIElement), typeof(ReNameTextBox), new PropertyMetadata(null, ParentUCChanged));
 
         public ReNameTextBox()
         {
@@ -74,11 +80,11 @@ namespace Jisons
         static void ParentUCChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ReNameTextBox tb = d as ReNameTextBox;
-            //ListBoxItemUC listbox = e.NewValue as ListBoxItemUC;
-            //if (tb != null && listbox != null)
-            //{
-            //    listbox.PreviewMouseDown += (sender, args) => { args.Handled = true; };
-            //}
+            UIElement uielement = e.NewValue as UIElement;
+            if (tb != null && uielement != null)
+            {
+                uielement.PreviewMouseDown += (sender, args) => { args.Handled = true; };
+            }
         }
 
         protected override void OnPreviewMouseDown(MouseButtonEventArgs e)

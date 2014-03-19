@@ -4,5 +4,22 @@
         Title="MainWindow"
         Width="525"
         Height="350">
-    <Grid />
+    <Grid>
+
+        <TextBox Width="120"
+                 Height="23"
+                 Margin="179,180,0,0"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 DataContext="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+                 Text="{Binding aa.Name}"
+                 TextWrapping="Wrap" />
+        <Button Width="75"
+                Margin="299,267,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="Button_Click"
+                Content="Button" />
+
+    </Grid>
 </Window>

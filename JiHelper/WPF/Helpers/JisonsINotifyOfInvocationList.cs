@@ -56,12 +56,12 @@ namespace Jisons
                 if (isINotifyCollectionChanged)
                 {
                     changed = "CollectionChanged";
-                    judgechanged = typeof(T).GetField(changed, flag);
+                    judgechanged = typeof(T).FindField(changed, flag);
                 }
                 else
                 {
                     changed = "PropertyChanged";
-                    judgechanged = typeof(T).GetField(changed, flag);
+                    judgechanged = typeof(T).FindField(changed, flag);
                 }
 
                 if (judgechanged == null)
@@ -72,7 +72,7 @@ namespace Jisons
                 var collectionvalue = judgechanged.GetValue(data);
                 if (collectionvalue != null)
                 {
-                    var collectionlist = typeof(MulticastDelegate).GetField("_invocationList", flag).GetValue(collectionvalue) as object[];
+                    var collectionlist = typeof(MulticastDelegate).FindField("_invocationList", flag).GetValue(collectionvalue) as object[];
                     if (collectionlist != null)
                     {
                         #region Judge Distinct
@@ -172,12 +172,12 @@ namespace Jisons
             if (isINotifyCollectionChanged)
             {
                 changed = "CollectionChanged";
-                judgechanged = typeof(T).GetField(changed, flag);
+                judgechanged = typeof(T).FindField(changed, flag);
             }
             else
             {
                 changed = "PropertyChanged";
-                judgechanged = typeof(T).GetField(changed, flag);
+                judgechanged = typeof(T).FindField(changed, flag);
             }
 
             if (judgechanged == null)
@@ -188,7 +188,7 @@ namespace Jisons
             var collectionvalue = judgechanged.GetValue(data);
             if (collectionvalue != null)
             {
-                var collectionlist = typeof(MulticastDelegate).GetField("_invocationList", flag).GetValue(collectionvalue) as object[];
+                var collectionlist = typeof(MulticastDelegate).FindField("_invocationList", flag).GetValue(collectionvalue) as object[];
                 if (collectionlist != null)
                 {
                     int collectioncount = collectionlist.Count() - 1;
@@ -197,7 +197,7 @@ namespace Jisons
                         var item = collectionlist[i];
                         if (item != null)
                         {
-                            var target = typeof(Delegate).GetField("_target", flag).GetValue(item);
+                            var target = typeof(Delegate).FindField("_target", flag).GetValue(item);
                             bool canRemove = target == null || target.Equals(remove_targetdata);
                             if (canRemove)
                             {
