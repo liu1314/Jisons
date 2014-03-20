@@ -31,11 +31,9 @@ namespace Jisons
 
         #region 字符编码转换
 
-        /// <summary>
-        /// string转换到byte[]
-        /// </summary>
-        /// <param name="body"></param>
-        /// <returns></returns>
+        /// <summary> string 转换到 byte[] </summary>
+        /// <param name="body"> 将要转换的 string </param>
+        /// <returns> 返回转换后的 byte[] </returns>
         public static byte[] ConvertToASCII(this string str)
         {
             return new ASCIIEncoding().GetBytes(str);
@@ -44,11 +42,11 @@ namespace Jisons
         #endregion
 
         /// <summary> 替换最后一个匹配字符串 </summary>
-        /// <param name="str">原字符串</param>
-        /// <param name="oldStr">即将被替换的字符串</param>
-        /// <param name="newStr">即将替换的字符串,null=>string.Empty</param>
-        /// <param name="comparisonType">字符串检查类型</param>
-        /// <returns></returns>
+        /// <param name="str"> 原字符串 </param>
+        /// <param name="oldStr"> 即将被替换的字符串 </param>
+        /// <param name="newStr"> 即将替换的字符串, null => string.Empty </param>
+        /// <param name="comparisonType"> 字符串检查类型 </param>
+        /// <returns> 返回替换后的字符串 </returns>
         public static string ReplaceLast(this string str, string oldStr, string newStr, StringComparison comparisonType = StringComparison.CurrentCultureIgnoreCase)
         {
             newStr = newStr ?? string.Empty;

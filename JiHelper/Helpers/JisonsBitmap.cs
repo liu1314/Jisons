@@ -31,8 +31,8 @@ namespace Jisons
     {
 
         /// <summary> 从 ImageSource 转换到 Bitmap </summary>
-        /// <param name="imageSource">将要转换的 imageSource</param>
-        /// <returns>返回转换后的 Bitmap </returns>
+        /// <param name="imageSource"> 将要转换的 ImageSource </param>
+        /// <returns> 返回转换后的 Bitmap </returns>
         public static Bitmap ConvertToBitmap(this ImageSource imageSource)
         {
             var bitmapSource = imageSource as BitmapSource;

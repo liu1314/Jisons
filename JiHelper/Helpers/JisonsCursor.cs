@@ -33,8 +33,8 @@ namespace Jisons
     {
 
         /// <summary> 把Stream转换为Cursor </summary>
-        /// <param name="ms">传入的Stream</param>
-        /// <returns>中内存流中读取的Cursor</returns>
+        /// <param name="ms"> 传入的Stream </param>
+        /// <returns> 中内存流中读取的Cursor </returns>
         public static Cursor ConvertToCursor(this Stream ms)
         {
             return new Cursor(ms);

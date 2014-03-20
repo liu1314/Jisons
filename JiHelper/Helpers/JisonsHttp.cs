@@ -44,9 +44,9 @@ namespace Jisons
         }
 
         /// <summary> 向HTTP流中添加数据头 </summary>
-        /// <param name="url">请求的URL</param>
-        /// <param name="method">请求使用的方法 GET、POST</param>
-        /// <returns>返回创建的HttpWebRequest</returns>
+        /// <param name="url"> 请求的URL </param>
+        /// <param name="method"> 请求使用的方法 GET、POST </param>
+        /// <returns> 返回创建的 HttpWebRequest </returns>
         private static HttpWebRequest CreatRequest(this string url, string method)
         {
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
@@ -68,8 +68,8 @@ namespace Jisons
         }
 
         /// <summary> 根据URL获取回传的 Stream 无编码格式的确认 </summary>
-        /// <param name="url">请求的URL</param>
-        /// <returns>返回的数据流</returns>
+        /// <param name="url"> 请求的URL </param>
+        /// <returns> 返回的数据流 </returns>
         public static Stream GetResponseOfStream(this string url)
         {
             try
@@ -99,10 +99,10 @@ namespace Jisons
         }
 
         /// <summary> 以字符串形式获取返回值 </summary>
-        /// <param name="url">请求的URl</param>
-        /// <param name="method">传递方法</param>
-        /// <param name="data">传递数据</param>
-        /// <returns>返回的字符串 UTF-8编码</returns>
+        /// <param name="url"> 请求的URl </param>
+        /// <param name="method"> 传递方法 </param>
+        /// <param name="data"> 传递数据 </param>
+        /// <returns> 返回的字符串 UTF-8 编码 </returns>
         public static string GetResponseOfString(this string url, string method, string data = "")
         {
             try
@@ -136,7 +136,6 @@ namespace Jisons
                 return string.Empty;
             }
         }
-
 
     }
 }

@@ -28,8 +28,8 @@ namespace Jisons
     {
 
         /// <summary> 去除HTML标签 </summary>
-        /// <param name="Htmlstring">传入的html页面字符串</param>
-        /// <returns>除去常用html标签之后的返回值</returns>
+        /// <param name="Htmlstring"> 传入的html页面字符串 </param>
+        /// <returns> 除去常用html标签之后的返回值 </returns>
         public static string DeleteHTMLTag(this string Htmlstring)
         {
             Htmlstring = Regex.Replace(Htmlstring, @"<script[^>]*?>.*?</script>", "", RegexOptions.IgnoreCase);
