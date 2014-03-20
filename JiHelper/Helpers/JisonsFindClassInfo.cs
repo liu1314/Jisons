@@ -40,7 +40,7 @@ namespace Jisons
         {
             IList<FieldInfo> datas = new List<FieldInfo>();
 
-            var classTypes = Assembly.GetExecutingAssembly().GetTypes();
+            var classTypes = assembly.GetTypes();
             foreach (var item in classTypes)
             {
                 var fields = item.GetFields(bindingAttr);
