@@ -10,9 +10,9 @@ using System.Windows;
 [assembly: AssemblyTitle("Jiper")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyCompany("迹I柳燕")]
 [assembly: AssemblyProduct("Jiper")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2014")]
+[assembly: AssemblyCopyright("Copyright © 迹I柳燕 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

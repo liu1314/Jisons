@@ -113,7 +113,7 @@
     <Compile Include="Helpers\JisonsBitmap.cs" />
     <Compile Include="Helpers\JisonsFindClassInfo.cs" />
     <Compile Include="Helpers\JisonsDragEventArgs.cs" />
-    <Compile Include="JisonsAssembly.cs" />
+    <Compile Include="Helpers\JisonsAssembly.cs" />
     <Compile Include="WPF\Datas\JisonsNotificationObject.cs" />
     <Compile Include="WPF\Converters\DoubleSpanConverter.cs" />
     <Compile Include="WPF\Controls\ReNameTextBox.cs" />
