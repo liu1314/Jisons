@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Jisons
 {
@@ -26,19 +27,18 @@ namespace Jisons
             }
 
             //获取当前程序集所引用的所有程序集包含的所有自定义 T 
-            foreach (var referencedAssembly in referencedAssemblies)
-            {
-                var assembly = Assembly.Load(referencedAssembly);
-                datas = assembly.FindStaticFieldValueInAssembly<T>(bindingAttr);
-                if (datas != null)
-                {
-                    retDatas.AddRange(datas);
-                }
-            }
+            Parallel.ForEach(referencedAssemblies, referencedAssembly =>
+               {
+                   var assembly = Assembly.Load(referencedAssembly);
+                   datas = assembly.FindStaticFieldValueInAssembly<T>(bindingAttr);
+                   if (datas != null)
+                   {
+                       retDatas.AddRange(datas);
+                   }
+               });
 
             return retDatas;
         }
-
 
     }
 }

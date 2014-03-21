@@ -47,6 +47,8 @@ namespace Jisons
                 if (fields.Count() > 0)
                 {
                     var fieldType = typeof(T);
+                    //此处在大量数据时曾试过并行获取 Parallel.ForEach
+                    //不幸的发现会更慢
                     foreach (var field in fields)
                     {
                         if (field.FieldType.Equals(fieldType))
@@ -72,6 +74,8 @@ namespace Jisons
             var fieldList = assembly.FindFieldInAssembly<T>(bindingAttr);
             if (fieldList.Count > 0)
             {
+                //此处在大量数据时曾试过并行获取 Parallel.ForEach
+                //不幸的发现会更慢
                 fieldList.ForEach(i =>
                 {
                     var data = i.GetValue(null) as T;
