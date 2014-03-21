@@ -56,6 +56,7 @@
     <PlatformTarget>x86</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\x86\Release\</OutputPath>
@@ -104,12 +105,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Helpers\JisonsCursor.cs" />
+    <Compile Include="Helpers\JisonsHighPrecisionTimer.cs" />
     <Compile Include="Helpers\JisonsHttp.cs" />
     <Compile Include="Helpers\JisonsSwitch.cs" />
     <Compile Include="Helpers\JisonsHtml.cs" />
     <Compile Include="Helpers\JisonsBitmap.cs" />
     <Compile Include="Helpers\JisonsFindClassInfo.cs" />
     <Compile Include="Helpers\JisonsDragEventArgs.cs" />
+    <Compile Include="JisonsAssembly.cs" />
     <Compile Include="WPF\Datas\JisonsNotificationObject.cs" />
     <Compile Include="WPF\Converters\DoubleSpanConverter.cs" />
     <Compile Include="WPF\Controls\ReNameTextBox.cs" />
