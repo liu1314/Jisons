@@ -17,15 +17,19 @@ namespace Jisons
         public static IList<T> FindAllStaticTypesInAssemblyDomain<T>(this Assembly currentAssembly, BindingFlags bindingAttr = BindingFlags.Static | BindingFlags.Public) where T : class
         {
             List<T> retDatas = new List<T>();
-            var referencedAssemblies = currentAssembly.GetReferencedAssemblies();
+            var referencedAssemblies = currentAssembly.GetReferencedAssemblies().ToList();
+           
+            //此处还是异步加载吧，具体有没有减少时间下回会测试一下
+            referencedAssemblies.Add(currentAssembly.GetName());
 
-            //获取当前 程序集所自定义的 T
-            var datas = currentAssembly.FindStaticFieldValueInAssembly<T>(bindingAttr);
-            if (datas != null)
-            {
-                retDatas.AddRange(datas);
-            }
+            //获取当前 程序集所自定义的 T 直接增加一次
+            //var datas = currentAssembly.FindStaticFieldValueInAssembly<T>(bindingAttr);
+            //if (datas != null)
+            //{
+            //    retDatas.AddRange(datas);
+            //}
 
+            IList<T> datas = new List<T>();
             //获取当前程序集所引用的所有程序集包含的所有自定义 T 
             Parallel.ForEach(referencedAssemblies, referencedAssembly =>
                {
