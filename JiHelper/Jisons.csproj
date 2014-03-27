@@ -127,6 +127,7 @@
     <Compile Include="Helpers\JisonsIList.cs" />
     <Compile Include="Helpers\JisonsString.cs" />
     <Compile Include="WPF\Helpers\JisonsINotifyOfInvocationList.cs" />
+    <Compile Include="WPF\Helpers\JisonsSelector.cs" />
     <Compile Include="WPF\Helpers\JisonsUIElement.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
