@@ -53,9 +53,6 @@ namespace Jisons
             return null;
         }
 
-
-
-
         /// <summary> 查询当前程序集所拥有的指定类型字段字段元数据集合 </summary>
         /// <typeparam name="T"> 指定查询的类型 </typeparam>
         /// <param name="assembly"> 查选的程序集 </param>
