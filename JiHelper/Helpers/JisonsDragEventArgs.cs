@@ -58,30 +58,30 @@ namespace Jisons
             return datas;
         }
 
-        /// <summary> 从 DragEventArgs 中获取指定类型的拖拽数据 </summary>
-        /// <typeparam name="T"> 获取的数据类型 </typeparam>
-        /// <param name="args"> 拖拽的参数 </param>
-        /// <returns> 查询到的数据 </returns>
-        public static IList<T> GetDatas<T>(this DragEventArgs args) where T : class
-        {
-            List<T> datas = new List<T>();
+        ///// <summary> 从 DragEventArgs 中获取指定类型的拖拽数据 </summary>
+        ///// <typeparam name="T"> 获取的数据类型 </typeparam>
+        ///// <param name="args"> 拖拽的参数 </param>
+        ///// <returns> 查询到的数据 </returns>
+        //public static IList<T> GetDatas<T>(this DragEventArgs args) where T : class
+        //{
+        //    List<T> datas = new List<T>();
 
-            var data = (DataObject)args.Data;
-            var dataFormateList = data.GetFormats();
-            if (dataFormateList.Count() > 0)
-            {
-                dataFormateList.ForEach(i =>
-                {
-                    var itemData = data.GetData(i) as T;
-                    if (itemData != null)
-                    {
-                        datas.Add(itemData);
-                    }
-                });
-            }
+        //    var data = (DataObject)args.Data;
+        //    var dataFormateList = data.GetFormats();
+        //    if (dataFormateList.Count() > 0)
+        //    {
+        //        dataFormateList.ForEach(i =>
+        //        {
+        //            var itemData = data.GetData(i) as T;
+        //            if (itemData != null)
+        //            {
+        //                datas.Add(itemData);
+        //            }
+        //        });
+        //    }
 
-            return datas;
-        }
+        //    return datas;
+        //}
 
     }
 }
