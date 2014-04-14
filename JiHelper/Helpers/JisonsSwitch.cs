@@ -10,8 +10,9 @@
  * @class      JisonsSwitch
  * @extends    
  * 
- *             对于 Switch 的扩展，主要用于不想写那么多的case
- * 
+ *             对于 Switch 的扩展，主要用于不写那么多的case
+ *             在于对于具有参数的函数直接使用 Delegate 进行调用
+ *             需要注意的是 Delegate 的参数顺序和个数
  *========================================
  * Hi,小喵喵...
  * Copyright © 迹I柳燕
@@ -21,56 +22,75 @@
  */
 
 using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Reflection;
 
 namespace Jisons
 {
+
+    /// <summary>
+    /// 此项在支持多参数的 Action 时没找到好的想法去支持，求指教。。。
+    /// </summary>
     public static class JisonsSwitch
     {
 
-        /// <summary> 创建 switch 中的单项 case 判断方法</summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="enumData"></param>
-        /// <param name="action"></param>
-        /// <returns></returns>
-        public static SwitchItem<T> CreatSwitchItem<T>(this T enumData, Action action)
+        /// <summary> 创建 switch 中的单项 case 判断方法
+        /// Ps，强烈不建议使用闭包进行数据的处理，正在研究闭包时参数传递不正确的问题</summary>
+        /// <typeparam name="T">  </typeparam>
+        /// <param name="enumData">  </param>
+        /// <param name="action">  </param>
+        /// <param name="paramsdatas"> 需要注意的是 Delegate 的参数顺序和个数 </param>
+        /// <returns>  </returns>
+        public static SwitchItem<T> CreatSwitchItem<T>(this T enumData, Delegate action, params object[] paramsdatas)
         {
-            return new SwitchItem<T>(enumData, action);
+            return new SwitchItem<T>(enumData, action, paramsdatas);
         }
 
         /// <summary> 执行 switch 中 case 的判断</summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="judge"></param>
         /// <param name="jition"></param>
-        /// <returns></returns>
+        /// <returns> 返回是否执行其中项 </returns>
         public static bool DoSwitchAction<T>(this T judge, params SwitchItem<T>[] jition)
         {
-            bool isdo = false;
             if (jition != null)
             {
                 foreach (var item in jition)
                 {
-                    if (item.Data != null && item.Data.Equals(judge) && item.Action != null)
+                    if (item.Data != null && item.Data.Equals(judge))
                     {
-                        isdo = true;
-                        item.Action();
+                        item.Delegate.Method.Invoke(item, item.ActionParamsDatas);
+
+                        return true;
                     }
                 }
             }
-            return isdo;
+            return false;
         }
 
         /// <summary> switch Item 模版 </summary>
         /// <typeparam name="T"></typeparam>
         public class SwitchItem<T>
         {
-            public SwitchItem(T enumData, Action action)
+            private SwitchItem(T enumData)
             {
                 this.Data = enumData;
-                this.Action = action;
+            }
+
+            public SwitchItem(T enumData, Delegate delegateData, params object[] paramsdatas)
+                : this(enumData)
+            {
+                this.Delegate = delegateData;
+                this.ActionParamsDatas = paramsdatas;
             }
 
             public T Data { get; set; }
-            public Action Action { get; set; }
+
+            public object[] ActionParamsDatas { get; set; }
+
+            public Delegate Delegate { get; set; }
         }
 
     }
