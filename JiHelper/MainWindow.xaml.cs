@@ -42,7 +42,7 @@ namespace Jisons
             var Position2 = "1".CreatSwitchItem<string>((System.Action<string>)((str) => MessageBox.Show(str)), "Ji");
 
             var Position1 = "12".CreatSwitchItem<string>((System.Action)(() => MessageBox.Show("2")));
-            c.DoSwitchAction<string>(Position1,Position2);
+            c.DoSwitchAction<string>(Position1, Position2);
 
 
 
@@ -63,7 +63,10 @@ namespace Jisons
 
             //var multicastDelegate = typeof(JisonsINotifyPropertyChanged).GetField("PropertyChanged", BindingFlags.Instance | BindingFlags.NonPublic);
             //var multicastDelegate1 = typeof(JisonsINotifyPropertyChanged).GetField("CollectionChanged", BindingFlags.Instance | BindingFlags.NonPublic);
+            //jiannan.zhuang@chukong-inc.com
+            //    gao.yu.fei@fesco.com.cn
 
+                  
         }
 
         void MainWindow_Loaded(object sender, RoutedEventArgs e)
@@ -114,5 +117,6 @@ namespace Jisons
         {
             aa.Name = "67" + DateTime.Now.ToString();
         }
+
     }
 }
