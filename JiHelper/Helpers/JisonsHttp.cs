@@ -20,6 +20,7 @@
  * 
  */
 
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Text;
@@ -36,6 +37,8 @@ namespace Jisons
 
         /// <summary> 设置Cookie容器 此项能在需要的时候保存Cookies </summary>
         public static CookieContainer CookieContainers = new CookieContainer();
+
+        public static Dictionary<string, string> Cookies = new Dictionary<string, string>();
 
         /// <summary> 设置需要证书请求的时候默认为true </summary>
         static JisonsHttp()
@@ -70,17 +73,29 @@ namespace Jisons
         /// <summary> 根据URL获取回传的 Stream 无编码格式的确认 </summary>
         /// <param name="url"> 请求的URL </param>
         /// <returns> 返回的数据流 </returns>
-        public static Stream GetResponseOfStream(this string url)
+        public static Stream GetResponseOfStream(this string url, string method = "get", string data = "")
         {
             try
             {
-                var req = CreatRequest(url, "GET");
-                var res = (HttpWebResponse)req.GetResponse();
-                var stream = res.GetResponseStream();
+                var req = CreatRequest(url, method);
 
-                //优化多线程内存流的释放
-                using (MemoryStream ms = new MemoryStream())
+                if (method.ToUpper() == "POST" && data != null)
                 {
+                    var postBytes = new ASCIIEncoding().GetBytes(data);
+                    req.ContentLength = postBytes.Length;
+                    Stream st = req.GetRequestStream();
+                    st.Write(postBytes, 0, postBytes.Length);
+                    st.Close();
+                }
+
+                HttpWebResponse res = (HttpWebResponse)req.GetResponse();
+
+
+
+                using (var stream = res.GetResponseStream())
+                {
+                    //优化多线程内存流的释放
+                    MemoryStream ms = new MemoryStream();
                     stream.CopyTo(ms);
                     //接收到的数据流需要重新设置读取起始位
                     ms.Position = 0;
@@ -103,7 +118,7 @@ namespace Jisons
         /// <param name="method"> 传递方法 </param>
         /// <param name="data"> 传递数据 </param>
         /// <returns> 返回的字符串 UTF-8 编码 </returns>
-        public static string GetResponseOfString(this string url, string method, string data = "")
+        public static string GetResponseOfString(this string url, string method = "get", string data = "")
         {
             try
             {
@@ -119,6 +134,12 @@ namespace Jisons
                 }
 
                 HttpWebResponse res = (HttpWebResponse)req.GetResponse();
+
+                foreach (Cookie cookie in res.Cookies)
+                {
+                    Cookies[cookie.Name] = cookie.Value;
+                    CookieContainers.Add(cookie);
+                }
 
                 //优化多线程内存流的释放
                 using (var stream = res.GetResponseStream())

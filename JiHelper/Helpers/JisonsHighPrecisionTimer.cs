@@ -1,4 +1,4 @@
-﻿/* 迹I柳燕
+﻿ /* 迹I柳燕
  * 
  * FileName:   JisonsHighPrecisionTimer.cs
  * Version:    1.0
@@ -50,7 +50,6 @@ namespace Jisons
         #endregion
 
         #region 微秒级精度
-
 
         /// <summary> 微秒级精度 用于得到高精度计时器（如果存在这样的计时器）的值。 </summary>
         /// <param name="tick"></param>

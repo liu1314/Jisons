@@ -38,11 +38,19 @@ namespace Jisons
             int a = (new Random()).Next(0, 2);
             int b5 = (new Random()).Next(1, 3);
             string b = "1";
+            var c = "12";
+            var Position2 = "1".CreatSwitchItem<string>((System.Action<string>)((str) => MessageBox.Show(str)), "Ji");
+
+            var Position1 = "12".CreatSwitchItem<string>((System.Action)(() => MessageBox.Show("2")));
+            c.DoSwitchAction<string>(Position1, Position2);
+
+
+
 
             //dynamic xiaolong = new { Eat = (Func<bool>)(() => (new Random()).Next(0, 2) != 0) }, fanli = new { Eat = (Func<bool>)(() => (new Random()).Next(1, 3) != 1) }, count = 0;
             //var wenzhi = xiaolong.Eat() || fanli.Eat() ? ((Func<bool>)(() => count.Equals(count++))).Invoke() : ((Func<bool>)(() => (count++.Equals(count--)))).Invoke();
 
-            this.Loaded += MainWindow_Loaded;
+            //this.Loaded += MainWindow_Loaded;
             //   add.Count
             //var fieald = aa.GetType().FindField("PropertyChanged1");
 
@@ -55,7 +63,10 @@ namespace Jisons
 
             //var multicastDelegate = typeof(JisonsINotifyPropertyChanged).GetField("PropertyChanged", BindingFlags.Instance | BindingFlags.NonPublic);
             //var multicastDelegate1 = typeof(JisonsINotifyPropertyChanged).GetField("CollectionChanged", BindingFlags.Instance | BindingFlags.NonPublic);
+            //jiannan.zhuang@chukong-inc.com
+            //    gao.yu.fei@fesco.com.cn
 
+                  
         }
 
         void MainWindow_Loaded(object sender, RoutedEventArgs e)
@@ -81,7 +92,7 @@ namespace Jisons
                 {
                     name = value;
 
-                   // this.RaisePropertyChanged("Name");
+                    // this.RaisePropertyChanged("Name");
 
                     this.RaisePropertyChanged(() => this.Name);
                 }
@@ -106,5 +117,6 @@ namespace Jisons
         {
             aa.Name = "67" + DateTime.Now.ToString();
         }
+
     }
 }
