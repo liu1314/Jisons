@@ -106,30 +106,36 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Helpers\JisonsCursor.cs" />
-    <Compile Include="Helpers\JisonsHighPrecisionTimer.cs" />
-    <Compile Include="Helpers\JisonsHttp.cs" />
-    <Compile Include="Helpers\JisonsSwitch.cs" />
-    <Compile Include="Helpers\JisonsHtml.cs" />
-    <Compile Include="Helpers\JisonsBitmap.cs" />
-    <Compile Include="Helpers\JisonsFindClassInfo.cs" />
-    <Compile Include="Helpers\JisonsDragEventArgs.cs" />
-    <Compile Include="Helpers\JisonsAssembly.cs" />
+    <Compile Include="GifHelper\AnimatedGifEncoder.cs" />
+    <Compile Include="GifHelper\GifDecoder.cs" />
+    <Compile Include="GifHelper\GifHelper.cs" />
+    <Compile Include="GifHelper\LZWEncoder.cs" />
+    <Compile Include="GifHelper\NeuQuant.cs" />
+    <Compile Include="Helpers\CursorHelper.cs" />
+    <Compile Include="Helpers\HighPrecisionTimerHelper.cs" />
+    <Compile Include="Helpers\HttpHelper.cs" />
+    <Compile Include="Helpers\SwitchHelper.cs" />
+    <Compile Include="Helpers\HtmlHelper.cs" />
+    <Compile Include="Helpers\BitmapHelper.cs" />
+    <Compile Include="Helpers\ClassInfoHelper.cs" />
+    <Compile Include="Helpers\DragEventArgsHelper.cs" />
+    <Compile Include="Helpers\AssemblyHelper.cs" />
     <Compile Include="WPF\Datas\JisonsNotificationObject.cs" />
     <Compile Include="WPF\Converters\DoubleSpanConverter.cs" />
     <Compile Include="WPF\Controls\ReNameTextBox.cs" />
     <Compile Include="WPF\Controls\TopmostWindow.cs" />
-    <Compile Include="Helpers\JisonsIcon.cs" />
+    <Compile Include="Helpers\IconHelper.cs" />
     <Compile Include="Helpers\JisonsXml.cs" />
-    <Compile Include="WPF\Helpers\JisonsBrush.cs" />
-    <Compile Include="WPF\Helpers\JisonsImageSource.cs" />
-    <Compile Include="WPF\Helpers\JisonsFindVisual.cs" />
-    <Compile Include="Helpers\JisonsIEnumerable.cs" />
-    <Compile Include="Helpers\JisonsIList.cs" />
-    <Compile Include="Helpers\JisonsString.cs" />
-    <Compile Include="WPF\Helpers\JisonsINotifyOfInvocationList.cs" />
-    <Compile Include="WPF\Helpers\JisonsSelector.cs" />
-    <Compile Include="WPF\Helpers\JisonsUIElement.cs" />
+    <Compile Include="WPF\Helpers\BitmapSourceHelper.cs" />
+    <Compile Include="WPF\Helpers\BrushHelper.cs" />
+    <Compile Include="WPF\Helpers\ImageSourceHelper.cs" />
+    <Compile Include="WPF\Helpers\FindVisualHelper.cs" />
+    <Compile Include="Helpers\IEnumerableHelper.cs" />
+    <Compile Include="Helpers\IListHelper.cs" />
+    <Compile Include="Helpers\StringHelper.cs" />
+    <Compile Include="WPF\Helpers\INotifyOfInvocationListHelper.cs" />
+    <Compile Include="WPF\Helpers\SelectorHelper.cs" />
+    <Compile Include="WPF\Helpers\UIElementHelper.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

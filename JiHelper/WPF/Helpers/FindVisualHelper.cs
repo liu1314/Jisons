@@ -1,13 +1,13 @@
 ﻿/* 迹I柳燕
  * 
- * FileName:   JisonsFindVisual.cs
+ * FileName:   FindVisualHelper.cs
  * Version:    1.0
  * Date:       2014.03.18
  * Author:     Ji
  * 
  *========================================
  * @namespace  Jisons 
- * @class      JisonsFindVisual
+ * @class      FindVisualHelper
  * @extends    
  *             
  *             WPF 扩展
