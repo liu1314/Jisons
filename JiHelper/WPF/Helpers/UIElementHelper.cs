@@ -1,13 +1,13 @@
 ﻿/* 迹I柳燕
  * 
- * FileName:   JisonsUIElement.cs
+ * FileName:   UIElementHelper.cs
  * Version:    1.0
  * Date:       2014.03.18
  * Author:     Ji
  * 
  *========================================
  * @namespace  Jisons 
- * @class      JisonsUIElement
+ * @class      UIElementHelper
  * @extends    
  *             
  *             WPF 扩展
@@ -27,7 +27,7 @@ using System.Windows.Media;
 
 namespace Jisons
 {
-    public static class JisonsUIElement
+    public static class UIElementHelper
     {
 
         /// <summary> 测试指定前点是否点中指定类型的元素 </summary>

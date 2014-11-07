@@ -1,13 +1,13 @@
 ﻿/* 迹I柳燕
  * 
- * FileName:   JisonsBrush.cs
+ * FileName:   BrushHelper.cs
  * Version:    1.0
  * Date:       2014.03.18
  * Author:     Ji
  * 
  *========================================
  * @namespace  Jisons 
- * @class      JisonsBrush
+ * @class      BrushHelper
  * @extends    
  *             
  *             WPF 扩展
@@ -26,7 +26,7 @@ using System.Windows.Media;
 
 namespace Jisons
 {
-    public static class JisonsBrush
+    public static class  BrushHelper
     {
 
         /// <summary> 十六进制颜色值转换为Brush </summary>

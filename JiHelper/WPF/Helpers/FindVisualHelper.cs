@@ -32,7 +32,7 @@ using System.Windows.Media;
 
 namespace Jisons
 {
-    public static class JisonsFindVisual
+    public static class  FindVisualHelper
     {
 
         /// <summary> 向上查找指定类型的逻辑容器 </summary>

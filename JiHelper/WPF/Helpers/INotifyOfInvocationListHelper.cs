@@ -1,13 +1,13 @@
 ﻿/* 迹I柳燕
  * 
- * FileName:   JisonsINotifyOfInvocationList.cs
+ * FileName:   INotifyOfInvocationListHelper.cs
  * Version:    1.0
  * Date:       2014.03.18
  * Author:     Ji
  * 
  *========================================
  * @namespace  Jisons 
- * @class      JisonsINotifyOfInvocationList
+ * @class      INotifyOfInvocationListHelper
  * @extends    
  *             
  *             WPF 扩展
@@ -29,7 +29,7 @@ using System.Reflection;
 
 namespace Jisons
 {
-    public static class JisonsINotifyOfInvocationList
+    public static class INotifyOfInvocationListHelper
     {
 
         /// <summary> 增加委托到 _invocationList 委托列表中 ，执行重复检查</summary>

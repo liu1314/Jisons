@@ -1,13 +1,13 @@
 ﻿/* 迹I柳燕
  * 
- * FileName:   JisonsImageSource.cs
+ * FileName:   ImageSourceHelper.cs
  * Version:    1.0
  * Date:       2014.03.18
  * Author:     Ji
  * 
  *========================================
  * @namespace  Jisons 
- * @class      JisonsImageSource
+ * @class      ImageSourceHelper
  * @extends    
  *             
  *             WPF 扩展
@@ -30,7 +30,7 @@ using System.Windows.Media.Imaging;
 
 namespace Jisons
 {
-    public static class JisonsImageSource
+    public static class ImageSourceHelper
     {
 
         /// <summary> 转换 Icon 到 ImageSource </summary>

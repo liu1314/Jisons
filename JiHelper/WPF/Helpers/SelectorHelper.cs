@@ -1,13 +1,13 @@
 ﻿/* 迹I柳燕
  * 
- * FileName:   JisonsSelector.cs
+ * FileName:   SelectorHelper.cs
  * Version:    1.0
  * Date:       2014.03.27
  * Author:     Ji
  * 
  *========================================
  * @namespace  Jisons 
- * @class      JisonsSelector
+ * @class      SelectorHelper
  * @extends    
  *             
  *             WPF 扩展
@@ -26,7 +26,7 @@ using System.Windows.Controls.Primitives;
 
 namespace Jisons
 {
-    public static class JisonsSelector
+    public static class  SelectorHelper
     {
 
         /// <summary> 在列表控件中中查询子元素 </summary>
