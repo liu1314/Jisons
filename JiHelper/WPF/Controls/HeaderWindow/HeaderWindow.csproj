@@ -140,16 +140,6 @@
   <ItemGroup>
     <Content Include="Microsoft.Windows.Shell.dll" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\CocoStudioCommon\EditorCommon\EditorCommon.csproj">
-      <Project>{542a2e05-3d47-40b4-9c62-effaa477b893}</Project>
-      <Name>EditorCommon</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\CocoStudioControlLib\Xceed.Wpf.Toolkit\Xceed.Wpf.Toolkit.csproj">
-      <Project>{ff1e5f36-4090-405b-a61a-aa08c87af0ce}</Project>
-      <Name>Xceed.Wpf.Toolkit</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
