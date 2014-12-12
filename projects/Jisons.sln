@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mono", "..\Mono\Mono.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jisons", "..\JiHelper\Jisons.csproj", "{50FC7C76-8936-46E8-9B30-17A13CABC751}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeaderWindow", "..\JiHelper\WPF\Controls\HeaderWindow\HeaderWindow.csproj", "{C78E34B8-6AA7-4540-A0BF-ECE2551EEE8E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,18 @@ Global
 		{50FC7C76-8936-46E8-9B30-17A13CABC751}.Release|Mixed Platforms.Build.0 = Release|x86
 		{50FC7C76-8936-46E8-9B30-17A13CABC751}.Release|x86.ActiveCfg = Release|x86
 		{50FC7C76-8936-46E8-9B30-17A13CABC751}.Release|x86.Build.0 = Release|x86
+		{C78E34B8-6AA7-4540-A0BF-ECE2551EEE8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C78E34B8-6AA7-4540-A0BF-ECE2551EEE8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C78E34B8-6AA7-4540-A0BF-ECE2551EEE8E}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{C78E34B8-6AA7-4540-A0BF-ECE2551EEE8E}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{C78E34B8-6AA7-4540-A0BF-ECE2551EEE8E}.Debug|x86.ActiveCfg = Debug|x86
+		{C78E34B8-6AA7-4540-A0BF-ECE2551EEE8E}.Debug|x86.Build.0 = Debug|x86
+		{C78E34B8-6AA7-4540-A0BF-ECE2551EEE8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C78E34B8-6AA7-4540-A0BF-ECE2551EEE8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C78E34B8-6AA7-4540-A0BF-ECE2551EEE8E}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{C78E34B8-6AA7-4540-A0BF-ECE2551EEE8E}.Release|Mixed Platforms.Build.0 = Release|x86
+		{C78E34B8-6AA7-4540-A0BF-ECE2551EEE8E}.Release|x86.ActiveCfg = Release|x86
+		{C78E34B8-6AA7-4540-A0BF-ECE2551EEE8E}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
