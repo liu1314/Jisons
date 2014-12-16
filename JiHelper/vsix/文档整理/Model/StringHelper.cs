@@ -62,20 +62,21 @@ namespace Jisons
             return str;
         }
 
-        //全角转半角
-        public const string DoubleByte = "ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ～！＠＃＄％︿＆＊（）＿－＋｜＼｛｝［］：＂；＇＜＞，．？／０１２３４５６７８９";
-        public const string SingleByte = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ~!@#$%^&*()_-+|\\{}[]:\";'<>,.?/0123456789";
+        /// <summary> 全角 </summary>
+        public const string DoubleByte = "ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ～！＠＃￥＄％︿＆＊（）＿－＋｜＼｛｝［］：＂；＇＜＞，．？／０１２３４５６７８９";
+        /// <summary> 半角 </summary>
+        public const string SingleByte = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ~!@#¥$%^&*()_-+|\\{}[]:\";'<>,.?/0123456789";
 
         public static char ConvertToSingleByte(this char c)
         {
             int index = DoubleByte.IndexOf(c);
-            return index != -1 ? SingleByte[c] : c;
+            return index != -1 ? SingleByte[index] : c;
         }
 
         public static char ConvertToDoubleByte(this char c)
         {
             int index = SingleByte.IndexOf(c);
-            return index != -1 ? DoubleByte[c] : c;
+            return index != -1 ? DoubleByte[index] : c;
         }
 
         public static string ConvertToSingleByte(this string str)

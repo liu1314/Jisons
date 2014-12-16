@@ -29,7 +29,7 @@ namespace Jisons
 {
 
     /// <summary> 基于Http的数据请求 </summary>
-    public static class  HttpHelper
+    public static class HttpHelper
     {
 
         /// <summary> 默认设置当前的标识为IE7 </summary>
@@ -73,7 +73,7 @@ namespace Jisons
         /// <summary> 根据URL获取回传的 Stream 无编码格式的确认 </summary>
         /// <param name="url"> 请求的URL </param>
         /// <returns> 返回的数据流 </returns>
-        public static Stream GetResponseOfStream(this string url, string method = "get", string data = "")
+        public static Stream GetStreamResponse(this string url, string method = "get", string data = "")
         {
             try
             {
@@ -90,9 +90,7 @@ namespace Jisons
 
                 HttpWebResponse res = (HttpWebResponse)req.GetResponse();
 
-
-
-                using (var stream = res.GetResponseStream())
+                var stream = res.GetResponseStream();
                 {
                     //优化多线程内存流的释放
                     MemoryStream ms = new MemoryStream();
@@ -113,12 +111,24 @@ namespace Jisons
             }
         }
 
+
         /// <summary> 以字符串形式获取返回值 </summary>
         /// <param name="url"> 请求的URl </param>
         /// <param name="method"> 传递方法 </param>
         /// <param name="data"> 传递数据 </param>
         /// <returns> 返回的字符串 UTF-8 编码 </returns>
-        public static string GetResponseOfString(this string url, string method = "get", string data = "")
+        public static string GetStringResponse(this string url, string method = "get", string data = "")
+        {
+            return GetStringResponse(url, Encoding.UTF8, method, data);
+        }
+
+        /// <summary> 以字符串形式获取返回值 </summary>
+        /// <param name="url"> 请求的URl </param>
+        /// <param name="encoding"> 编码格式 </param>
+        /// <param name="method"> 传递方法 </param>
+        /// <param name="data"> 传递数据 </param>
+        /// <returns> 返回指定编码的字符串 </returns>
+        public static string GetStringResponse(this string url, Encoding encoding, string method = "get", string data = "")
         {
             try
             {
@@ -144,7 +154,7 @@ namespace Jisons
                 //优化多线程内存流的释放
                 using (var stream = res.GetResponseStream())
                 {
-                    var sr = new StreamReader(stream, Encoding.UTF8).ReadToEnd();
+                    var sr = new StreamReader(stream, encoding).ReadToEnd();
 
                     //优化多线程多个实例时的端口占用
                     res.Close();

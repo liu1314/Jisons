@@ -26,7 +26,7 @@ using System.Windows.Media;
 
 namespace Jisons
 {
-    public static class  BrushHelper
+    public static class BrushHelper
     {
 
         /// <summary> 十六进制颜色值转换为Brush </summary>
@@ -37,7 +37,7 @@ namespace Jisons
             return new SolidColorBrush((Color)ColorConverter.ConvertFromString(brushStr));
         }
 
-        static Random random = new Random();
+        private static Random random = new Random();
         /// <summary> 随机生成Brush </summary>
         /// <param name="isTransparent">是否可透明</param>
         /// <returns>生成的Brush</returns>
@@ -64,7 +64,6 @@ namespace Jisons
                 return ("#FF" + r + g + b).ConvertToBrush();
             }
         }
-
 
     }
 }

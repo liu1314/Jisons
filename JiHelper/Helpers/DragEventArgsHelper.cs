@@ -41,7 +41,7 @@ namespace Jisons
             var dataFormateList = data.GetFormats();
             if (dataFormateList.Count() > 0)
             {
-                var dataList = data.GetData(dataFormateList[0]) as IEnumerableHelper;
+                var dataList = data.GetData(dataFormateList[0]) as IEnumerable;
                 if (dataList != null)
                 {
                     IEnumerator enumerator = dataList.GetEnumerator();

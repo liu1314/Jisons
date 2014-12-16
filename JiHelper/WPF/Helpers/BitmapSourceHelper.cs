@@ -9,11 +9,21 @@ namespace Jisons
     public static class BitmapSourceHelper
     {
 
+        /// <summary> 把 BitmapSource 转换成 Bitmap </summary>
+        /// <param name="bs"></param>
+        /// <returns></returns>
         public static Bitmap ConvertToBitmap(this BitmapSource bs)
         {
             return ConvertToBitmap(bs, 0, 0, bs.PixelWidth, bs.PixelHeight);
         }
 
+        /// <summary> 把 BitmapSource 转换成指定起始点和宽高的 Bitmap </summary>
+        /// <param name="bs"></param>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <returns></returns>
         public static Bitmap ConvertToBitmap(this BitmapSource bs, int x, int y, int width, int height)
         {
             var bmp = new Bitmap(width, height, PixelFormat.Format32bppPArgb);
@@ -23,11 +33,21 @@ namespace Jisons
             return bmp;
         }
 
+        /// <summary> 把 BitmapSource 转换成 byte[] </summary>
+        /// <param name="bs"></param>
+        /// <returns></returns>
         public static byte[] ConvertToBytes(this BitmapSource bs)
         {
             return ConvertToBytes(bs, 0, 0, (int)bs.Width, (int)bs.Height);
         }
 
+        /// <summary> 把 BitmapSource 转换成指定起始点和宽高的 byte[] </summary>
+        /// <param name="bs"></param>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <returns></returns>
         public static byte[] ConvertToBytes(this BitmapSource bs, int x, int y, int width, int height)
         {
             var rect = new Int32Rect(x, y, width, height);

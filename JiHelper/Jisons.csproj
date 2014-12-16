@@ -126,7 +126,7 @@
     <Compile Include="WPF\Controls\ReNameTextBox.cs" />
     <Compile Include="WPF\Controls\TopmostWindow.cs" />
     <Compile Include="Helpers\IconHelper.cs" />
-    <Compile Include="Helpers\JisonsXml.cs" />
+    <Compile Include="Helpers\XmlHelper.cs" />
     <Compile Include="WPF\Helpers\BitmapSourceHelper.cs" />
     <Compile Include="WPF\Helpers\BrushHelper.cs" />
     <Compile Include="WPF\Helpers\ImageSourceHelper.cs" />
@@ -135,6 +135,7 @@
     <Compile Include="Helpers\IListHelper.cs" />
     <Compile Include="Helpers\StringHelper.cs" />
     <Compile Include="WPF\Helpers\INotifyOfInvocationListHelper.cs" />
+    <Compile Include="WPF\Helpers\InputHelper.cs" />
     <Compile Include="WPF\Helpers\SelectorHelper.cs" />
     <Compile Include="WPF\Helpers\UIElementHelper.cs" />
     <Compile Include="MainWindow.xaml.cs">
