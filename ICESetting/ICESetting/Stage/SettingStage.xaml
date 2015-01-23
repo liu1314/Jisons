@@ -1,0 +1,325 @@
+﻿<UserControl x:Class="ICESetting.Stage.SettingStage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:btn="clr-namespace:TVMWPFLab.Button"
+             xmlns:ctr="clr-namespace:TVMWPFLab.Control"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ice="clr-namespace:ICESetting.Control"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             Width="1920"
+             Height="1080">
+    <UserControl.LayoutTransform>
+        <ScaleTransform x:Name="_scale1" />
+    </UserControl.LayoutTransform>
+    <UserControl.Resources>
+        <ImageBrush x:Key="_tbImage" ImageSource="/ICESetting;component/Assets/会议名称框.png" />
+        <Style x:Key="_titleBox" TargetType="TextBlock">
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="FontSize" Value="30" />
+            <Setter Property="FontFamily" Value="黑体" />
+            <Setter Property="Width" Value="326" />
+            <Setter Property="Height" Value="46" />
+            <Setter Property="Foreground" Value="#ffffff" />
+            <Setter Property="Background" Value="{StaticResource _tbImage}" />
+        </Style>
+        <Style x:Key="_titleBox1" TargetType="TextBox">
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="FontSize" Value="30" />
+            <Setter Property="FontFamily" Value="黑体" />
+            <Setter Property="Width" Value="326" />
+            <Setter Property="Height" Value="46" />
+            <Setter Property="Foreground" Value="#ffffff" />
+            <Setter Property="Background" Value="{StaticResource _tbImage}" />
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="8*" />
+                <ColumnDefinition Width="7*" />
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.RowSpan="9"
+                   Grid.ColumnSpan="2"
+                   Source="/ICESetting;component/Assets/底.png"
+                   Stretch="Fill" />
+            <!--  <Image Source="/效果图.jpg" Stretch="Fill" Opacity="0.2" Grid.RowSpan="9" Grid.ColumnSpan="2"/>  -->
+
+
+            <Grid Grid.ColumnSpan="2">
+                <TextBlock Margin="100,43,0,0"
+                           FontFamily="微软雅黑"
+                           FontSize="34"
+                           Foreground="#ffffff"
+                           Text="设 置" />
+                <Image Height="2"
+                       Margin="90,95,90,0"
+                       VerticalAlignment="Top"
+                       Source="/ICESetting;component/Assets/长横线.png"
+                       Stretch="Fill" />
+            </Grid>
+
+            <StackPanel Margin="152,155,0,0">
+                <!--  音量  -->
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock HorizontalAlignment="Left"
+                               VerticalAlignment="Center"
+                               FontFamily="微软雅黑"
+                               FontSize="30"
+                               Foreground="#ffffff"
+                               Text="系统音量" />
+                    <Grid Width="318"
+                          Height="24"
+                          Margin="100,0,0,5">
+                        <Image MinWidth="0" Source="/ICESetting;component/Assets/声音调节底.png" />
+                        <Image x:Name="_volumeImg"
+                               Width="118"
+                               Height="24"
+                               MinWidth="0"
+                               HorizontalAlignment="Left"
+                               Source="/ICESetting;component/Assets/声音调节点击.png"
+                               Stretch="UniformToFill" />
+                        <Slider x:Name="_volume"
+                                Width="318"
+                                Height="24"
+                                IsMoveToPointEnabled="True"
+                                Maximum="100"
+                                Minimum="0"
+                                Opacity="0.01"
+                                Value="50" />
+                    </Grid>
+                    <Image Grid.Column="3"
+                           Width="28"
+                           Height="28"
+                           Margin="20,0,0,0"
+                           Source="/ICESetting;component/Assets/音量大.png" />
+                </StackPanel>
+                <!--  因特网时间  -->
+                <StackPanel Margin="0,60,0,0" Orientation="Horizontal">
+                    <TextBlock HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontFamily="微软雅黑"
+                               FontSize="30"
+                               Foreground="#ffffff"
+                               Text="系统时间" />
+                    <btn:RealButton x:Name="internetTime"
+                                    Width="240"
+                                    Height="52"
+                                    Margin="90,0,0,0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    Click="RealButton_Click"
+                                    ImageDownSource="/ICESetting;component/Assets/同步因特网点击.png"
+                                    ImageHoverSource="/ICESetting;component/Assets/同步因特网点击.png"
+                                    ImageUpSource="/ICESetting;component/Assets/同步因特网.png" />
+                    <Grid x:Name="timeZone"
+                          Width="240"
+                          Height="52"
+                          Margin="20,0,0,0"
+                          HorizontalAlignment="Left"
+                          VerticalAlignment="Center">
+                        <btn:RealButton x:Name="timeRegion"
+                                        ImageDownSource="/ICESetting;component/Assets/timeRegion_Down.png"
+                                        ImageHoverSource="/ICESetting;component/Assets/timeRegion_Down.png"
+                                        ImageUpSource="/ICESetting;component/Assets/timeRegion_Up.png" />
+                        <Label x:Name="lableTime"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Content="UTC+08:00"
+                               FontFamily="微软雅黑"
+                               FontSize="25"
+                               Foreground="#ffffff" />
+                    </Grid>
+
+
+                </StackPanel>
+                <!--  本地时间年月日  -->
+                <StackPanel Margin="210,32,0,0" Orientation="Horizontal">
+                    <ice:MyTime x:Name="_year" Margin="0,0,10,0" />
+                    <ice:MyTime x:Name="_month" Margin="0,0,10,0" />
+                    <ice:MyTime x:Name="_day" />
+                </StackPanel>
+                <!--  本地时间时分秒  -->
+                <StackPanel Margin="210,32,0,0" Orientation="Horizontal">
+                    <ice:MyTime x:Name="_hour" Margin="0,0,10,0" />
+                    <ice:MyTime x:Name="_minute" Margin="0,0,10,0" />
+                    <ice:MyTime x:Name="_second" />
+                </StackPanel>
+                <!--  分辨率设置  -->
+                <StackPanel Margin="0,37,0,0" Orientation="Horizontal">
+                    <TextBlock HorizontalAlignment="Left"
+                               VerticalAlignment="Center"
+                               FontFamily="微软雅黑"
+                               FontSize="30"
+                               Foreground="#ffffff"
+                               Text="分辨率设置" />
+                    <Grid x:Name="resolutionUIGrid"
+                          Width="530"
+                          Height="52"
+                          Margin="45,0,0,0">
+                        <ice:ResolutionUI x:Name="resolutionUI"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Bottom" />
+                    </Grid>
+                </StackPanel>
+                <!--  ICE名称  -->
+                <StackPanel Margin="0,100,0,0" Orientation="Horizontal">
+                    <TextBlock HorizontalAlignment="Left"
+                               VerticalAlignment="Center"
+                               FontFamily="微软雅黑"
+                               FontSize="30"
+                               Foreground="#ffffff"
+                               Text="ICE 名称" />
+                    <TextBlock x:Name="meetingName"
+                               Grid.Column="1"
+                               Margin="100,0,0,0"
+                               Padding="0,6"
+                               Style="{StaticResource _titleBox}"
+                               Text="会议名称"
+                               TextAlignment="Center" />
+                </StackPanel>
+                <!--  更新和引导  -->
+                <StackPanel Margin="210,60,0,0" Orientation="Horizontal">
+                    <btn:RealButton x:Name="updateBox"
+                                    Grid.Column="1"
+                                    Width="240"
+                                    Height="52"
+                                    Margin="0,0,0,0"
+                                    Click="updateBox_Click"
+                                    ImageDownSource="/ICESetting;component/Assets/检查更新点击.png"
+                                    ImageHoverSource="/ICESetting;component/Assets/检查更新点击.png"
+                                    ImageUpSource="/ICESetting;component/Assets/检查更新.png" />
+                    <btn:RealButton x:Name="appDesc"
+                                    Grid.Column="1"
+                                    Width="240"
+                                    Height="52"
+                                    Margin="30,0,0,0"
+                                    Click="appDesc_Click"
+                                    ImageDownSource="/ICESetting;component/Assets/appDown.png"
+                                    ImageHoverSource="/ICESetting;component/Assets/appDown.png"
+                                    ImageUpSource="/ICESetting;component/Assets/appUp.png" />
+                </StackPanel>
+            </StackPanel>
+            <Grid HorizontalAlignment="Left"
+                  VerticalAlignment="Bottom"
+                  Visibility="Visible">
+                <StackPanel HorizontalAlignment="Left" Orientation="Vertical">
+                    <StackPanel Margin="0,0,0,20" Orientation="Horizontal">
+                        <TextBlock x:Name="currentVersion"
+                                   FontFamily="微软雅黑"
+                                   FontSize="30"
+                                   Foreground="#98a0a4"
+                                   Text="版本号：3.5.0.1" />
+                        <TextBlock x:Name="text0"
+                                   VerticalAlignment="Center"
+                                   FontFamily="微软雅黑"
+                                   FontSize="30"
+                                   Foreground="Red"
+                                   Text="(3.6.2.9)"
+                                   Visibility="Collapsed" />
+                    </StackPanel>
+                    <StackPanel Margin="0,0,0,20" Orientation="Horizontal">
+                        <TextBlock FontFamily="微软雅黑"
+                                   FontSize="25"
+                                   Foreground="#98a0a4"
+                                   Text="天脉官网：" />
+                        <TextBlock FontFamily="微软雅黑"
+                                   FontSize="25"
+                                   Foreground="Cyan"
+                                   Text="www.tvmining.com"
+                                   Visibility="Visible" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Visibility="Collapsed">
+                        <TextBlock FontFamily="微软雅黑"
+                                   FontSize="25"
+                                   Foreground="#98a0a4"
+                                   Text="客服中心：" />
+                        <TextBlock FontFamily="微软雅黑"
+                                   FontSize="25"
+                                   Foreground="Cyan"
+                                   Text="400-610-0660"
+                                   Visibility="Visible" />
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid Width="733"
+                      Height="789"
+                      Margin="23,110,0,0"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Center">
+                    <Image Source="/ICESetting;component/Assets/说明框.png" />
+                    <ice:LawText x:Name="myLawText"
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center" />
+                    <TextBlock x:Name="desc"
+                               Width="700"
+                               Margin="0,20,0,0"
+                               FontFamily="微软雅黑"
+                               FontSize="30"
+                               Foreground="White"
+                               LineHeight="50"
+                               Text=""
+                               TextAlignment="Left"
+                               TextWrapping="Wrap" />
+                </Grid>
+            </Grid>
+        </Grid>
+        <ctr:WarningPlate x:Name="warningPlate"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Top" />
+        <Grid x:Name="popGrid" Visibility="Collapsed">
+            <Grid.Background>
+                <SolidColorBrush Opacity="0.3" Color="Black" />
+            </Grid.Background>
+        </Grid>
+        <Canvas x:Name="selectedCanvas" />
+        <Grid>
+            <StackPanel x:Name="stackLight"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Orientation="Horizontal">
+                <Image x:Name="red"
+                       Width="50"
+                       Height="50"
+                       Source="/ICESetting;component/Assets/redPoint.png"
+                       Visibility="Visible" />
+                <Image x:Name="green"
+                       Width="50"
+                       Height="50"
+                       Source="/ICESetting;component/Assets/greenPoint.png"
+                       Visibility="Collapsed" />
+                <Image x:Name="blue"
+                       Width="50"
+                       Height="50"
+                       Source="/ICESetting;component/Assets/bluePoint.png"
+                       Visibility="Collapsed" />
+            </StackPanel>
+        </Grid>
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    Orientation="Horizontal"
+                    Visibility="Collapsed">
+            <Button Width="100"
+                    Height="50"
+                    Click="Button_Click"
+                    Content="向前" />
+            <Button Width="100"
+                    Height="50"
+                    Click="Button_Click_1"
+                    Content="向后" />
+
+            <Button Width="100"
+                    Height="50"
+                    Click="Button_Click_2"
+                    Content="确认" />
+            <Button Width="100"
+                    Height="50"
+                    Click="Button_Click_3"
+                    Content="取消" />
+
+        </StackPanel>
+
+        <Grid x:Name="griPop" />
+    </Grid>
+</UserControl>

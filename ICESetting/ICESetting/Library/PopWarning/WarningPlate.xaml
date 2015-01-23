@@ -1,0 +1,79 @@
+﻿
+<!--
+    /* * * * * * * * * * * * * ** * * * * * ** * * * * * ** * * * * * ** * * * * * *
+    * Copyright (C) 天脉聚源传媒科技有限公司
+    * 版权所有。
+    * 文件名：WarningPlate.xaml
+    * 文件功能描述：程序操作友好提示牌布局
+    * 创建标识：Jimmy.Bright 2011/09/25 , chujinming@tvmining.com
+    * 开发须知：在进行较大逻辑改动之前请联系原作者
+    * * * * * * * * * * * * * ** * * * * * ** * * * * * ** * * * * * ** * * * * * */
+-->
+<UserControl x:Class="TVMWPFLab.Control.WarningPlate"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Name="_user"
+             Width="330"
+             Height="95"
+             HorizontalAlignment="Center"
+             VerticalAlignment="Top">
+    <UserControl.RenderTransform>
+        <TransformGroup>
+            <TranslateTransform x:Name="translate" Y="0" />
+        </TransformGroup>
+    </UserControl.RenderTransform>
+    <UserControl.OpacityMask>
+        <LinearGradientBrush StartPoint="0.5 0" EndPoint="0.5 1">
+            <GradientStop x:Name="gradient" Offset="0" Color="Black" />
+            <GradientStop x:Name="gradien1" Offset="0" Color="Transparent" />
+        </LinearGradientBrush>
+    </UserControl.OpacityMask>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="32" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="10" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="14" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Image Grid.Row="1"
+               Grid.Column="0"
+               SnapsToDevicePixels="True"
+               Source="Assets/warningLeft.png" />
+        <Image Grid.Row="1"
+               Grid.Column="1"
+               SnapsToDevicePixels="True"
+               Source="Assets/waringMid.png"
+               Stretch="Fill" />
+        <Image Grid.RowSpan="2"
+               Grid.Column="2"
+               SnapsToDevicePixels="True"
+               Source="Assets/warningArrow.png" />
+        <Image Grid.Row="1"
+               Grid.Column="3"
+               SnapsToDevicePixels="True"
+               Source="Assets/waringMid.png"
+               Stretch="Fill" />
+        <Image Grid.Row="1"
+               Grid.Column="4"
+               SnapsToDevicePixels="True"
+               Source="Assets/warningRight.png" />
+        <Grid x:Name="_grid"
+              Grid.RowSpan="2"
+              Grid.ColumnSpan="5">
+            <TextBlock x:Name="warningText"
+                       Margin="10,5,0,0"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontFamily="微软雅黑"
+                       FontSize="20"
+                       Foreground="White"
+                       Text=""
+                       TextAlignment="Center" />
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="ICESetting.Control.SelectedBorder"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             Canvas.Left="0"
+             Canvas.Top="0"
+             Width="30"
+             Height="30"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             mc:Ignorable="d">
+    <Grid Margin="-10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="15" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="15" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="15" />
+        </Grid.RowDefinitions>
+        <Image Grid.Row="0"
+               Grid.Column="0"
+               SnapsToDevicePixels="True"
+               Source="/Assets/border/左上角.png"
+               Stretch="Fill" />
+        <Image Grid.Row="0"
+               Grid.Column="2"
+               SnapsToDevicePixels="True"
+               Source="/Assets/border/右上角.png"
+               Stretch="Fill" />
+        <Image Grid.Row="0"
+               Grid.Column="1"
+               SnapsToDevicePixels="True"
+               Source="/Assets/border/上边.png"
+               Stretch="Fill" />
+        <Image Grid.Row="1"
+               Grid.Column="0"
+               SnapsToDevicePixels="True"
+               Source="/Assets/border/左边.png"
+               Stretch="Fill" />
+        <Image Grid.Row="1"
+               Grid.Column="2"
+               SnapsToDevicePixels="True"
+               Source="/Assets/border/右边.png"
+               Stretch="Fill" />
+        <Image Grid.Row="2"
+               Grid.Column="0"
+               SnapsToDevicePixels="True"
+               Source="/Assets/border/左下角.png"
+               Stretch="Fill" />
+        <Image Grid.Row="2"
+               Grid.Column="1"
+               SnapsToDevicePixels="True"
+               Source="/Assets/border/下边.png"
+               Stretch="Fill" />
+        <Image Grid.Row="2"
+               Grid.Column="2"
+               SnapsToDevicePixels="True"
+               Source="/Assets/border/右下角.png"
+               Stretch="Fill" />
+    </Grid>
+</UserControl>

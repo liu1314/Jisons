@@ -1,0 +1,257 @@
+﻿<UserControl x:Class="TVMWPFLab.Control.CoolProgressBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:btn="clr-namespace:TVMWPFLab.Button"
+             xmlns:ctr="clr-namespace:TVMWPFLab.Control"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             RenderTransformOrigin=".5 .5">
+    <UserControl.RenderTransform>
+        <ScaleTransform x:Name="_scale"
+                        ScaleX="1"
+                        ScaleY="1" />
+    </UserControl.RenderTransform>
+    <!--
+        <UserControl.Background>
+        <SolidColorBrush Color="Transparent" Opacity="0.5"/>
+        </UserControl.Background>
+    -->
+    <UserControl.Resources>
+        <!--  <TextBlock x:Key="myText" Text="正在努力为您获取资源"/>  -->
+        <Storyboard x:Key="loadSb" RepeatBehavior="Forever">
+            <DoubleAnimation Duration="0:0:1.5"
+                             From="0"
+                             Storyboard.TargetName="rotateLoadIcon"
+                             Storyboard.TargetProperty="Angle"
+                             To="360" />
+        </Storyboard>
+        <Storyboard x:Key="_loadStory" RepeatBehavior="Forever">
+            <StringAnimationUsingKeyFrames Storyboard.TargetName="_loadText" Storyboard.TargetProperty="Text">
+                <DiscreteStringKeyFrame x:Name="key0"
+                                        KeyTime="0:0:1"
+                                        Value=".." />
+                <DiscreteStringKeyFrame x:Name="key1"
+                                        KeyTime="0:0:2"
+                                        Value="..." />
+                <DiscreteStringKeyFrame x:Name="key2"
+                                        KeyTime="0:0:3"
+                                        Value="...." />
+                <DiscreteStringKeyFrame x:Name="key3"
+                                        KeyTime="0:0:4"
+                                        Value="...." />
+            </StringAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="_loadStory1" RepeatBehavior="Forever">
+            <StringAnimationUsingKeyFrames Storyboard.TargetName="_loadText1" Storyboard.TargetProperty="Text">
+                <DiscreteStringKeyFrame x:Name="key01"
+                                        KeyTime="0:0:1"
+                                        Value=".." />
+                <DiscreteStringKeyFrame x:Name="key11"
+                                        KeyTime="0:0:2"
+                                        Value="..." />
+                <DiscreteStringKeyFrame x:Name="key21"
+                                        KeyTime="0:0:3"
+                                        Value="...." />
+                <DiscreteStringKeyFrame x:Name="key31"
+                                        KeyTime="0:0:4"
+                                        Value="...." />
+            </StringAnimationUsingKeyFrames>
+        </Storyboard>
+        <LinearGradientBrush x:Key="ProgressBarIndicatorAnimatedFill" StartPoint="0,0" EndPoint="1,0">
+            <LinearGradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Offset="0" Color="#000000FF" />
+                    <GradientStop Offset="0.4" Color="#600000FF" />
+                    <GradientStop Offset="0.6" Color="#600000FF" />
+                    <GradientStop Offset="1" Color="#000000FF" />
+                </GradientStopCollection>
+            </LinearGradientBrush.GradientStops>
+        </LinearGradientBrush>
+        <Style x:Key="myProgressBar" TargetType="{x:Type ProgressBar}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ProgressBar}">
+                        <Grid MinWidth="200" MinHeight="37">
+                            <Border Name="PART_Track" Background="Transparent" />
+                            <Border Name="PART_Indicator"
+                                    HorizontalAlignment="Left"
+                                    ClipToBounds="True">
+                                <Grid>
+                                    <Canvas Background="Transparent">
+                                        <Canvas>
+                                            <ctr:Bar Canvas.Left="0"
+                                                     Canvas.Top="0"
+                                                     Width="600"
+                                                     Height="37" />
+                                            <!--  <Image  Source="Assets/ProgressBarBg.png" Stretch="Fill" Width="464" Height="19" Canvas.Left="0" Canvas.Top="0"/>  -->
+                                        </Canvas>
+                                        <Image Name="image0"
+                                               Canvas.Left="0"
+                                               Canvas.Top="0"
+                                               Width="600"
+                                               Height="37"
+                                               Loaded="image0_Loaded"
+                                               Source="Assets/1.png"
+                                               Stretch="Fill" />
+                                    </Canvas>
+                                    <Border Name="PART_GlowRect"
+                                            Width="100"
+                                            HorizontalAlignment="Left"
+                                            Background="{StaticResource ProgressBarIndicatorAnimatedFill}" />
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid x:Name="rootGrid"
+          Width="828"
+          Height="362"
+          RenderTransformOrigin="0.5 0.5">
+        <Grid.RenderTransform>
+            <ScaleTransform x:Name="scaleGrid" ScaleY="1" />
+        </Grid.RenderTransform>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Image Grid.RowSpan="3" Source="Assets/progressBg.png" />
+        <!--  <Image Grid.RowSpan="3" Source="Assets/图例.png"/>  -->
+
+        <Grid Grid.Row="0">
+            <StackPanel Margin="0,28,0,0" Orientation="Vertical">
+                <StackPanel Margin="59,70,0,0" Orientation="Horizontal">
+                    <Image x:Name="loadIcon"
+                           Width="38"
+                           Height="38"
+                           Margin="10,0,10,0"
+                           RenderTransformOrigin=".5 .5"
+                           Source="Assets/loadIcon.png">
+                        <Image.RenderTransform>
+                            <RotateTransform x:Name="rotateLoadIcon" />
+                        </Image.RenderTransform>
+                        <Image.Triggers>
+                            <EventTrigger RoutedEvent="Image.Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0:0:2"
+                                                         From="0"
+                                                         RepeatBehavior="Forever"
+                                                         Storyboard.TargetName="rotateLoadIcon"
+                                                         Storyboard.TargetProperty="Angle"
+                                                         To="360" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Image.Triggers>
+                    </Image>
+                    <TextBlock x:Name="titleBlock"
+                               Margin="20,0,0,0"
+                               VerticalAlignment="Center"
+                               FontSize="30"
+                               Foreground="White"
+                               Text="" />
+                    <TextBlock x:Name="_loadText1"
+                               VerticalAlignment="Bottom"
+                               FontFamily="微软雅黑"
+                               FontSize="30"
+                               Foreground="White"
+                               Text="."
+                               Visibility="Collapsed">
+                        <TextBlock.Triggers>
+                            <EventTrigger RoutedEvent="TextBlock.Loaded">
+                                <BeginStoryboard Storyboard="{StaticResource _loadStory1}" />
+                            </EventTrigger>
+                        </TextBlock.Triggers>
+                    </TextBlock>
+                    <TextBlock x:Name="perCent1"
+                               VerticalAlignment="Center"
+                               FontFamily="微软雅黑"
+                               FontSize="30"
+                               Foreground="#199ed7"
+                               Text="0%"
+                               Visibility="Collapsed" />
+                </StackPanel>
+
+                <StackPanel x:Name="detail"
+                            Margin="25,10,0,0"
+                            HorizontalAlignment="Left"
+                            Orientation="Horizontal">
+                    <!--  <TextBlock  Text="{Binding ProgressBarContent}"   Foreground="White" FontSize="14" FontFamily="微软雅黑" VerticalAlignment="Center"/>  -->
+                    <TextBlock MaxWidth="400"
+                               Margin="112,3,0,0"
+                               VerticalAlignment="Center"
+                               Background="Transparent"
+                               FontFamily="微软雅黑"
+                               FontSize="25"
+                               Foreground="White"
+                               Text="{Binding ProgressBarContent}" />
+                    <TextBlock x:Name="_loadText"
+                               VerticalAlignment="Center"
+                               FontFamily="微软雅黑"
+                               FontSize="25"
+                               Foreground="White"
+                               Text=".">
+                        <TextBlock.Triggers>
+                            <EventTrigger RoutedEvent="TextBlock.Loaded">
+                                <BeginStoryboard Storyboard="{StaticResource _loadStory}" />
+                            </EventTrigger>
+                        </TextBlock.Triggers>
+                    </TextBlock>
+                    <TextBlock x:Name="perCent"
+                               VerticalAlignment="Center"
+                               FontFamily="微软雅黑"
+                               FontSize="25"
+                               Foreground="#199ed7"
+                               Text="" />
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Image Width="591"
+                   Height="31"
+                   Margin="36,0,0,55"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Source="Assets/ProgressBarBg0.png" />
+            <ProgressBar Name="bar"
+                         Width="600"
+                         Height="37"
+                         Margin="40,45,0,0"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Top"
+                         Maximum="100"
+                         Minimum="0"
+                         Style="{StaticResource myProgressBar}"
+                         Value="100" />
+        </Grid>
+        <Grid Grid.Row="0">
+            <btn:RealButton Width="20"
+                            Height="20"
+                            Margin="0,0,30,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Click="RealButton_Click"
+                            ImageDownSource="Assets/closeProgressDown.png"
+                            ImageHoverSource="Assets/closeProgressDown.png"
+                            ImageUpSource="Assets/closeProgressUp.png"
+                            ToolTip="取消"
+                            Visibility="Collapsed" />
+        </Grid>
+        <TextBlock x:Name="label"
+                   Grid.RowSpan="2"
+                   Margin="0,0,0,40"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Bottom"
+                   FontFamily="微软雅黑"
+                   FontSize="20"
+                   Foreground="Gray"
+                   Opacity="0"
+                   Text="提示：您可以通过遥控端发送'取消'命令终止本次更新。" />
+    </Grid>
+
+
+
+</UserControl>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Config xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ServerName />
+  <TvmID />
+  <DeviceName>jimmy</DeviceName>
+  <OutputLog>false</OutputLog>
+  <ProcessWatchBreak>200</ProcessWatchBreak>
+  <VentuzDataPath />
+  <GuestName>Guest</GuestName>
+  <ProcessUser>
+    <PUser Title="MainWindow" Subscription="2abf" ExePath="" />
+  </ProcessUser>
+  <ThumSize>500</ThumSize>
+</Config>

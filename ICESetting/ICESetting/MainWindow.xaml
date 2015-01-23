@@ -1,0 +1,19 @@
+﻿<Window x:Class="ICESetting.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:stage="clr-namespace:ICESetting.Stage"
+        Title="MainWindow"
+        Width="1080"
+        Height="1920"
+        AllowsTransparency="True"
+        Background="Transparent"
+        WindowState="Maximized"
+        WindowStyle="None">
+    <Window.LayoutTransform>
+        <ScaleTransform x:Name="_scale" />
+    </Window.LayoutTransform>
+    <Grid>
+        <stage:SettingStage x:Name="myStage" />
+        <Grid x:Name="showMessageWin" Panel.ZIndex="1" />
+    </Grid>
+</Window>

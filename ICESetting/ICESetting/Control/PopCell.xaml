@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="ICESetting.Control.PopCell"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             Canvas.Left="0"
+             Canvas.Top="0"
+             Opacity="0.7"
+             RenderTransformOrigin="0.5 0.5"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             mc:Ignorable="d">
+    <UserControl.RenderTransform>
+        <TransformGroup>
+            <RotateTransform x:Name="_rotate" />
+            <TranslateTransform x:Name="_translate" />
+            <ScaleTransform x:Name="_scale" />
+        </TransformGroup>
+    </UserControl.RenderTransform>
+    <Grid>
+        <Border BorderThickness="10">
+            <Border.BorderBrush>
+                <SolidColorBrush Opacity="0.5" Color="Black" />
+            </Border.BorderBrush>
+            <Image x:Name="_img"
+                   Margin="-5"
+                   Source="/ICESetting;component/Assets/1.jpg" />
+        </Border>
+    </Grid>
+</UserControl>

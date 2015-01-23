@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FDC6EADA-850C-41E2-AE89-18B106E5A15E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICESetting</RootNamespace>
+    <AssemblyName>ICESetting</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>2013091309503837---www_ico_la---.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CoreAudioApi">
+      <HintPath>.\CoreAudioApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Control\AppDesc.xaml.cs">
+      <DependentUpon>AppDesc.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\PopCell.xaml.cs">
+      <DependentUpon>PopCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\LawText.xaml.cs">
+      <DependentUpon>LawText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\PopPanel.xaml.cs">
+      <DependentUpon>PopPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Resolution.cs" />
+    <Compile Include="Control\ResolutionUI.xaml.cs">
+      <DependentUpon>ResolutionUI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\SelectedBorder.xaml.cs">
+      <DependentUpon>SelectedBorder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Library\Animation\PennerDoubleAnimation.cs" />
+    <Compile Include="Library\Animation\PennerInterpolator.cs" />
+    <Compile Include="Library\Animation\UserAnimationMethod.cs" />
+    <Compile Include="Library\LoadMediaSize\Bar.xaml.cs">
+      <DependentUpon>Bar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Library\PopWarning\WarningPlate.xaml.cs">
+      <DependentUpon>WarningPlate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Library\PopWin\MessageWin.xaml.cs">
+      <DependentUpon>MessageWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Library\SevenZip\ArchiveEntry.cs" />
+    <Compile Include="Library\SevenZip\ArchiveExtractCallback.cs" />
+    <Compile Include="Library\SevenZip\ArchiveOpenCallback.cs" />
+    <Compile Include="Library\SevenZip\EventArgs.cs" />
+    <Compile Include="Library\SevenZip\Exceptions.cs" />
+    <Compile Include="Library\SevenZip\PropVariant.cs" />
+    <Compile Include="Library\SevenZip\SevenZipArchive.cs" />
+    <Compile Include="Library\SevenZip\SevenZipInterface.cs" />
+    <Compile Include="Stage\DoAction.cs" />
+    <Compile Include="Control\MyTime.xaml.cs">
+      <DependentUpon>MyTime.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stage\SettingStage.xaml.cs">
+      <DependentUpon>SettingStage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\Global.cs" />
+    <Compile Include="Utils\ImageRenderingHelper.cs" />
+    <Compile Include="Utils\ImplyTextBox.cs" />
+    <Compile Include="Utils\IniFile.cs" />
+    <Compile Include="Utils\RealButton.cs" />
+    <Compile Include="Utils\ThemeEngine.cs" />
+    <Compile Include="Utils\Update.cs" />
+    <Compile Include="Utils\Utility.cs" />
+    <Compile Include="Utils\WPFLinker.cs" />
+    <Compile Include="Utils\ZipHelper.cs" />
+    <Compile Include="Utils\常用属性.cs" />
+    <Compile Include="Library\LoadMediaSize\CoolProgressBar.xaml.cs">
+      <DependentUpon>CoolProgressBar.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Control\AppDesc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\PopCell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\LawText.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\PopPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\ResolutionUI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\SelectedBorder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Library\LoadMediaSize\Bar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Library\PopWarning\WarningPlate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Library\PopWin\ControlTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Library\PopWin\MessageWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Control\MyTime.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Stage\SettingStage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Library\LoadMediaSize\CoolProgressBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Config\config.ini">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\上.png" />
+    <Resource Include="Assets\下.png" />
+    <Resource Include="Assets\亮.png" />
+    <Resource Include="Assets\亮度调节上.png" />
+    <Resource Include="Assets\亮度调节底.png" />
+    <Resource Include="Assets\会议名称框.png" />
+    <Resource Include="Assets\同步因特网.png" />
+    <Resource Include="Assets\同步因特网点击.png" />
+    <Resource Include="Assets\声音调节底.png" />
+    <Resource Include="Assets\声音调节点击.png" />
+    <Resource Include="Assets\底.png" />
+    <Resource Include="Assets\时间日期设定框.png" />
+    <Resource Include="Assets\时间日期设定选择框.png" />
+    <Resource Include="Assets\暗.png" />
+    <Resource Include="Assets\说明框.png" />
+    <Resource Include="Assets\长横线.png" />
+    <Resource Include="Assets\静音.png" />
+    <Resource Include="Assets\音量大.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\检查更新.png" />
+    <Resource Include="Assets\检查更新点击.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\border\上边.png" />
+    <Resource Include="Assets\border\下边.png" />
+    <Resource Include="Assets\border\右上角.png" />
+    <Resource Include="Assets\border\右下角.png" />
+    <Resource Include="Assets\border\右边.png" />
+    <Resource Include="Assets\border\左上角.png" />
+    <Resource Include="Assets\border\左下角.png" />
+    <Resource Include="Assets\border\左边.png" />
+    <Resource Include="Library\LoadMediaSize\Assets\1.png" />
+    <Resource Include="Library\LoadMediaSize\Assets\2.png" />
+    <Resource Include="Library\LoadMediaSize\Assets\3.png" />
+    <Resource Include="Library\LoadMediaSize\Assets\closeProgressDown.png" />
+    <Resource Include="Library\LoadMediaSize\Assets\closeProgressUp.png" />
+    <Resource Include="Library\LoadMediaSize\Assets\loadIcon.png" />
+    <Resource Include="Library\LoadMediaSize\Assets\ProgressBarBg.png" />
+    <Resource Include="Library\LoadMediaSize\Assets\progressBg.png" />
+    <Resource Include="Library\PopWarning\Assets\waringMid.png" />
+    <Resource Include="Library\PopWarning\Assets\warningArrow.png" />
+    <Resource Include="Library\PopWarning\Assets\warningLeft.png" />
+    <Resource Include="Library\PopWarning\Assets\warningRight.png" />
+    <Resource Include="Library\PopWin\Assets\cancelBtnDown.png" />
+    <Resource Include="Library\PopWin\Assets\cancelBtnUp.png" />
+    <Resource Include="Library\PopWin\Assets\okBtnDown.png" />
+    <Resource Include="Library\PopWin\Assets\okBtnUp.png" />
+    <Resource Include="Library\PopWin\Assets\popBG.png" />
+    <Resource Include="Library\PopWin\Assets\popCloseDown.png" />
+    <Resource Include="Library\PopWin\Assets\popCloseUp.png" />
+    <Resource Include="Library\PopWin\Assets\popIcon.png" />
+    <Resource Include="Assets\恢复出厂设置.png" />
+    <Resource Include="Assets\恢复出厂设置点击.png" />
+    <Resource Include="Library\LoadMediaSize\Assets\ProgressBarBg0.png" />
+    <Resource Include="Library\LoadMediaSize\Assets\图例.png" />
+    <Resource Include="Library\LoadMediaSize\Assets\进度条中间.png" />
+    <Resource Include="Library\LoadMediaSize\Assets\进度条右.png" />
+    <Resource Include="Library\LoadMediaSize\Assets\进度条左.png" />
+    <Resource Include="Library\PopWin\Assets\图例.png" />
+    <Resource Include="Assets\bluePoint.png" />
+    <Resource Include="Assets\greenPoint.png" />
+    <Resource Include="Assets\redPoint.png" />
+    <Resource Include="2013091309503837---www_ico_la---.ico" />
+    <Resource Include="Assets\law.png" />
+    <Resource Include="Assets\appDown.png" />
+    <Resource Include="Assets\appUp.png" />
+    <Resource Include="Assets\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\分辨率长条.png" />
+    <Resource Include="Assets\刻度.png" />
+    <Resource Include="Assets\刻度选择块.png" />
+    <Resource Include="Assets\数字框.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="效果图.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\timeRegion_Down.png" />
+    <Resource Include="Assets\timeRegion_Up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="iVisionServer.exe" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
