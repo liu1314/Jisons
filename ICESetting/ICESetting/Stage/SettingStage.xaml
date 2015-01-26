@@ -9,7 +9,7 @@
              Width="1920"
              Height="1080">
     <UserControl.LayoutTransform>
-        <ScaleTransform x:Name="_scale1" />
+        <ScaleTransform x:Name="_scale11" />
     </UserControl.LayoutTransform>
     <UserControl.Resources>
         <ImageBrush x:Key="_tbImage" ImageSource="/ICESetting;component/Assets/会议名称框.png" />
@@ -180,6 +180,7 @@
                 </StackPanel>
                 <!--  更新和引导  -->
                 <StackPanel Margin="210,60,0,0" Orientation="Horizontal">
+                    <!--<检查更新按钮>-->
                     <btn:RealButton x:Name="updateBox"
                                     Grid.Column="1"
                                     Width="240"
@@ -189,12 +190,16 @@
                                     ImageDownSource="/ICESetting;component/Assets/检查更新点击.png"
                                     ImageHoverSource="/ICESetting;component/Assets/检查更新点击.png"
                                     ImageUpSource="/ICESetting;component/Assets/检查更新.png" />
+                    <!--<产品引导按钮
+                    》-->
                     <btn:RealButton x:Name="appDesc"
                                     Grid.Column="1"
                                     Width="240"
                                     Height="52"
                                     Margin="30,0,0,0"
+                                   
                                     Click="appDesc_Click"
+                                    
                                     ImageDownSource="/ICESetting;component/Assets/appDown.png"
                                     ImageHoverSource="/ICESetting;component/Assets/appDown.png"
                                     ImageUpSource="/ICESetting;component/Assets/appUp.png" />
@@ -301,6 +306,7 @@
                     Orientation="Horizontal"
                     Visibility="Collapsed">
             <Button Width="100"
+                    Background="Yellow"
                     Height="50"
                     Click="Button_Click"
                     Content="向前" />

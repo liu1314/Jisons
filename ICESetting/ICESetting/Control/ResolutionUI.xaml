@@ -36,8 +36,8 @@
                   Width="230"
                   Height="64">
                 <Canvas>
-                    <Image Canvas.Left="95"
-                           Canvas.Top="-50"
+                    <Image Canvas.Left="100"
+                           Canvas.Top="-48"
                            Width="38"
                            Height="47"
                            Source="/ICESetting;component/Assets/刻度选择块.png" />

@@ -97,8 +97,8 @@ namespace ICESetting.Stage
                 Warning = this.FindName("warningPlate") as WarningPlate;
                 PopGrid = this.FindName("popGrid") as Grid;
                 Stage = this;
-                this._scale1.ScaleX = SystemParameters.PrimaryScreenWidth / 1920d;
-                this._scale1.ScaleY = SystemParameters.PrimaryScreenHeight / 1080d;
+                this._scale11.ScaleX = SystemParameters.PrimaryScreenWidth / 1920d;
+                this._scale11.ScaleY = SystemParameters.PrimaryScreenHeight / 1080d;
                 MMDeviceEnumerator DevEnum = new MMDeviceEnumerator();
                 device = DevEnum.GetDefaultAudioEndpoint(EDataFlow.eRender, ERole.eMultimedia);
                 _volume.ValueChanged += Slider_ValueChanged;
@@ -147,10 +147,13 @@ namespace ICESetting.Stage
             }
             catch { }
         }
+
+        
         void resolutionUI_UpdateResolution(object sender, EventArgs e)
         {
-            this._scale1.ScaleX = SystemParameters.PrimaryScreenWidth / 1920d;
-            this._scale1.ScaleY = SystemParameters.PrimaryScreenHeight / 1080d;
+            this._scale11.ScaleX = SystemParameters.PrimaryScreenWidth / 1920d;
+            this._scale11.ScaleY = SystemParameters.PrimaryScreenHeight / 1080d;
+            //把分辨率写死了；
         }
         #endregion
 
@@ -400,12 +403,13 @@ namespace ICESetting.Stage
             bool state = InternetGetConnectedState(out I, 0);
             return state;
         }
-        void PressOnTimerBtn()
+       /// <summary>
+       /// 同步因特网设置时间
+       /// </summary>
+       public  void PressOnTimerBtn()
         {
             try
             {
-                //Ping ping = new Ping();
-                //PingReply replay = ping.Send("202.108.22.5");
                 if (IsConnected())
                 //if (replay.Status == IPStatus.Success)
                 {
@@ -503,6 +507,9 @@ namespace ICESetting.Stage
         #endregion
 
         #region 检查系统更新
+        /// <summary>
+        /// 检查系统是否更新
+        /// </summary>
         private void CheckVersion()
         {
             string version = string.Empty;
@@ -520,10 +527,7 @@ namespace ICESetting.Stage
                         {
                             text0.Visibility = Visibility.Visible;
                             text0.Text = string.Format("({0})", version);
-                            //if (version.ToLower().Contains("_release"))
-                            //{
-                            //    version.Replace("_release", "");
-                            //}
+                          
                             version_config = version.Split('_')[0];
                         }
                         else
@@ -1482,7 +1486,8 @@ namespace ICESetting.Stage
         }
 
         /// <summary>
-        /// 移动到指定空间焦点
+        /// 移动到指定的选择框
+        /// 
         /// </summary>
         /// <param name="objectIndex"></param>
         private void GoIndex(int objectIndex)
@@ -2112,7 +2117,7 @@ namespace ICESetting.Stage
             timeRegion.RemoteClick();
             if (currentTimeZoneIndex > 0)
             {
-                currentTimeZoneIndex--;
+                currentTimeZoneIndex++;
             }
             else
             {
